@@ -60,3 +60,11 @@ button:hover {
     cursor: pointer;
     background-color:rgba(30, 143, 255, 0.628);
 }
+#video {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+video {
+    width: 100%;
+}
