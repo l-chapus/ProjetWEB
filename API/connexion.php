@@ -23,15 +23,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
   $email = mysqli_real_escape_string($conn, $email);
   $password = mysqli_real_escape_string($conn, $password);
 
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
   // Exécuter une requête SQL pour sélectionner l'utilisateur correspondant
-  $sql = "SELECT * FROM utilisateurs WHERE email='$email' AND 'password'='$password'";
+  $sql = "SELECT * FROM utilisateurs WHERE email='$email' AND 'password'='$hashed_password'";
   $result = mysqli_query($conn, $sql);
 
   // Vérifier si l'utilisateur existe dans la base de données
   if (mysqli_num_rows($result) == 1) {
     // Démarrer une session PHP et stocker les informations d'identification de l'utilisateur
     session_start();
-    $_SESSION['username'] = $username;
+    $_SESSION['email'] = $email;
     $_SESSION['loggedin'] = true;
 
     // Rediriger l'utilisateur vers la page d'accueil
