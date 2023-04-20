@@ -1,9 +1,8 @@
 body {
-    margin-top: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100vw;
     height: 100vh;
-    margin: 0px;
+    margin: 0;
     background-color: #485161;
 }
 nav {
@@ -27,6 +26,7 @@ form {
 }
 #information {
     display: flex;
+    width: 100%;
 }
 input, select{
     width: 350px;
@@ -63,8 +63,8 @@ button:hover {
 #video {
     display: flex;
     flex-direction: column;
-    width: 100%;
 }
 video {
     width: 100%;
+    margin: 0px;
 }

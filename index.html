@@ -21,27 +21,22 @@
         </section>
         <section id="information">
             <form>
-                <label>Email</label>
-                <input type="text">
-                <label>Mot de passe</label>
-                <input type="text">
-                <label>Univers</label>
-                <select name="pets" id="pet-select">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Mot de passe</label>
+                <input type="text" id="password" name="password">
+                <label for="univers">Univers</label>
+                <select name="univers" id="univers-select">
                     <option value="">--Please choose an option--</option>
-                    <option>Nouveau univers</option>
-                    <option value="cat">Cat</option>
-                    <option value="hamster">Hamster</option>
-                    <option value="parrot">Parrot</option>
-                    <option value="spider">Spider</option>
-                    <option value="goldfish">Goldfish</option>
+                    <option value="nouveau-univers">Nouveau univers</option>
                 </select>
                 <button>Connection</button>
             </form>
-            <form>
-                <label>Email</label>
-                <input type="text">
-                <label>Mot de passe</label>
-                <input type="text">
+            <form action="API/creer_utilisateur.php" method="post">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Mot de passe</label>
+                <input type="text" id="password" name="password">
                 <div>
                     <input type="checkbox" id="case">
                     <label>Accepter les conditions générales</label> 
