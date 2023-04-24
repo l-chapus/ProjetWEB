@@ -18,6 +18,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
   // Récupérer les informations d'identification du formulaire
   $email = $_POST['email'];
   $password = $_POST['password'];
+  $univers = $_POST['univers'];
+  
+  // print_r($_POST);
 
   // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
   $email = mysqli_real_escape_string($conn, $email);
@@ -37,10 +40,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $_SESSION['loggedin'] = true;
 
     // Rediriger l'utilisateur vers la page d'accueil
-    header("Location: page_accueil.php");
+    header("Location: galaxie.html");
   } else {
     // Afficher un message d'erreur si l'utilisateur n'existe pas dans la base de données
     $error = "Nom d'utilisateur ou mot de passe incorrect.";
+    print($error);
   }
 }
 
