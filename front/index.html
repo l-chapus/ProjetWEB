@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ESIREM Galactique</title>
-        <link rel="stylesheet" href="style/style_accueil.css" />
+        <link rel="stylesheet" href="front/style/style_accueil.css" />
     </head>
 
     <body>
@@ -15,12 +15,12 @@
         </nav>
         <section id="video">
             <video autoplay muted loop>
-                <source src="ressources/background.mp4">
+                <source src="front/ressources/background.mp4">
             </video>
             <p>Un jeu avec plein de possibilitées</p>
         </section>
         <section id="information">
-            <form action="API/connexion.php" method="post">
+            <form action="api/connexion.php" method="post">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email">
                 <label for="password">Mot de passe</label>
@@ -32,7 +32,7 @@
                 </select>
                 <button>Connection</button>
             </form>
-            <form action="API/creer_utilisateur.php" method="post">
+            <form action="api/creer_utilisateur.php" method="post">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email">
                 <label for="password">Mot de passe</label>
