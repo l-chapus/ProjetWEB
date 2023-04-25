@@ -11,13 +11,13 @@
 
     <body>
         <nav>
+            <img src="ressources/logo.png">
             <h1>ESIREM Galactique</h1>
         </nav>
         <section id="video">
             <video autoplay muted loop>
                 <source src="ressources/background.mp4">
             </video>
-            <p>Un jeu avec plein de possibilitées</p>
         </section>
         <section id="information">
             <form action="api/connexion.php" method="post">
@@ -27,7 +27,7 @@
                 <input type="password" id="password" name="password">
                 <label for="univers">Univers</label>
                 <select name="univers" id="univers-select">
-                    <option value="">--Please choose an option--</option>
+                    <option value="">--Choisissez une option--</option>
                     <option value="nouveau-univers">Nouveau univers</option>
                 </select>
                 <button>Connection</button>
