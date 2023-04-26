@@ -27,7 +27,7 @@ form {
 }
 #information {
     justify-content: center;
-    background-color: #111111;
+    background-color: rgba(17, 17, 17, 0.8);
     position: relative;
     display: flex;
     margin: 300px 20% 0px 20%;

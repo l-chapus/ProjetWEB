@@ -28,6 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   $stmt = $db->prepare("SELECT COUNT(*) FROM utilisateurs WHERE email = ?");
   $stmt->execute([$email]);
   $count = $stmt->fetchColumn();
+  
   if ($count > 0) {
     echo "Cet utilisateur existe déjà";
     exit();
