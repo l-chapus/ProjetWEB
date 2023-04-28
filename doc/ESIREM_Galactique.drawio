@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-04-28T11:59:45.593Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="nQ7gz2_dYntWOUp3kMse" version="20.6.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-28T12:19:46.921Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 OPR/97.0.0.0" etag="M786T2q-LHj6oJ2_lo_B" version="20.6.2" type="github">
   <diagram name="Page-1" id="kiIUahFWZ84-yVQ-otkS">
     <mxGraphModel dx="2249" dy="1956" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -215,22 +215,19 @@
             <mxPoint x="190" y="410" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5uqwfvLCXKu4Hqc6w1ec-104" value="Systeme_solaire" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="460" y="465" width="140" height="150" as="geometry">
+        <mxCell id="5uqwfvLCXKu4Hqc6w1ec-104" value="SystemeSolaire" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="520" width="140" height="120" as="geometry">
             <mxRectangle x="250" y="30" width="90" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="5uqwfvLCXKu4Hqc6w1ec-105" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontStyle=4" parent="5uqwfvLCXKu4Hqc6w1ec-104" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="5uqwfvLCXKu4Hqc6w1ec-106" value="idUnivers" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="5uqwfvLCXKu4Hqc6w1ec-104" vertex="1">
+        <mxCell id="5uqwfvLCXKu4Hqc6w1ec-108" value="idGalaxie" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="5uqwfvLCXKu4Hqc6w1ec-104" vertex="1">
           <mxGeometry y="60" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="5uqwfvLCXKu4Hqc6w1ec-108" value="idGalaxie" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="5uqwfvLCXKu4Hqc6w1ec-104" vertex="1">
-          <mxGeometry y="90" width="140" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="5uqwfvLCXKu4Hqc6w1ec-107" value="nom" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="5uqwfvLCXKu4Hqc6w1ec-104" vertex="1">
-          <mxGeometry y="120" width="140" height="30" as="geometry" />
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="5uqwfvLCXKu4Hqc6w1ec-111" value="1,N" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="310" y="430" width="60" height="30" as="geometry" />
