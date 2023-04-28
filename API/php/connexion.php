@@ -1,54 +1,64 @@
 <?php
 
-$servername = "localhost";
-$username = "esirem";
-$password = "esirem";
-$dbname = "esirem_galactique";
-
-// Créer une connexion
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Vérifier la connexion
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+include 'pdo.php';
 
 // Vérifier si le formulaire a été soumis
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['email']) && isset($_POST['password'])) 
+{
+
   // Récupérer les informations d'identification du formulaire
   $email = $_POST['email'];
   $password = $_POST['password'];
   $univers = $_POST['univers'];
+
+  $email = $_POST['email'];
+  $stmt = $db->prepare("SELECT * FROM utilisateurs WHERE email = :email");
+  $stmt->bindValue(":email",$email);
   
-  // print_r($_POST);
+  // Exécution de la requète
+  if($stmt->execute())
+  {
+    if($stmt->rowCount() == 1)
+    {
 
-  // Échapper les caractères spéciaux pour éviter les attaques par injection SQL
-  $email = mysqli_real_escape_string($conn, $email);
-  $password = mysqli_real_escape_string($conn, $password);
-
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-  // Exécuter une requête SQL pour sélectionner l'utilisateur correspondant
-  $sql = "SELECT * FROM utilisateurs WHERE email='$email' AND 'password'='$hashed_password'";
-  $result = mysqli_query($conn, $sql);
-
-  // Vérifier si l'utilisateur existe dans la base de données
-  if (mysqli_num_rows($result) == 1) {
-    // Démarrer une session PHP et stocker les informations d'identification de l'utilisateur
-    session_start();
-    $_SESSION['email'] = $email;
-    $_SESSION['loggedin'] = true;
-
-    // Rediriger l'utilisateur vers la page d'accueil
-    header("Location: galaxie.html");
-  } else {
-    // Afficher un message d'erreur si l'utilisateur n'existe pas dans la base de données
-    $error = "Nom d'utilisateur ou mot de passe incorrect.";
-    print($error);
+    // Récupération de l'utilisateur
+    $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    // Vérification du mot de passe avec la fonction password_verify()
+      if(password_verify($password, $utilisateur['password']))
+      {
+      // Identifiants valides
+        echo "Identifiants valides.";
+        
+        if($univers != ''){
+          // Démare la session
+          session_start();
+          $_SESSION['email'] = $email;
+          $_SESSION['loggedin'] = true;
+          $_SESSION['univers'] = $univers;
+          var_dump($_SESSION);
+        
+          // Rediriger l'utilisateur vers la page d'accueil
+          header("Location:../../front/galaxie.php");
+        }
+        else{
+          echo " Veuillez choisir un univers";
+        }
+      }
+      else
+      {
+      // Mot de passe incorrect
+      echo "Mot de passe incorrect.";
+      }
+    }
+    else
+    {
+    // Utilisateur non trouvé
+      echo "Utilisateur non trouvé.";
+    }
   }
 }
-
-// Fermer la connexion
-mysqli_close($conn);
-
-?>
+else
+{
+  echo "Erreur lors de la requête";
+}

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+
+    if(!$_SESSION){
+        header("Location:index.html");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -38,7 +46,7 @@
 
             <div>
                 <div contentEditable="true">de chose a écrire</div> 
-                <div>de chose a écrire</div>
+                <div><?php echo $_SESSION['univers'].' '.$_SESSION['email']; ?></div>
             </div>
         </div>  
 
