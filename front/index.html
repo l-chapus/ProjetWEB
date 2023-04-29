@@ -8,7 +8,7 @@
         <title>ESIREM Galactique</title>
         <link rel="stylesheet" href="style/style_accueil.css" />
 
-        <script src="../API/js/creer_utilisateur.js"></script>
+        <script src="../API/js/gestion_utilisateur.js"></script>
     </head>
 
     <body>
@@ -23,24 +23,29 @@
             </video>
         </section>
         <section id="information">
-            <form action="../API/php/connexion.php" method="post">
+            <form id="connexion">
                 <label for="email">Email</label>
                 <input type="email" id="email_connexion" name="email">
+                <div id="email_connexion_manquant" class="reset">Veuillez completer ce champ.</div>
+                <div id="email_connexion_inconnu" class="reset">Utilisateur inconnu, créé un compte.</div>
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password_connexion" name="password" placeholder="Mot de passe">
+                <div id="password_connexion_manquant" class="reset">Veuillez completer ce champ.</div>
+                <div id="password_connexion_incorrect" class="reset">Mot de passe incorrect.</div>
                 <label for="univers">Univers</label>
-                <select name="univers" id="univers-select">
+                <select name="univers" id="univers_select">
                     <option value="">--Choisissez une option--</option>
                     <option value="nouveau-univers">Nouveau univers</option>
                 </select>
-                <button>Connexion</button>
+                <div id="univers_manquant" class="reset">Veuillez choisir un univers.</div>
+                <button type="button" onclick="connexion()">Connexion</button>
             </form>
             <form id="creation">
                 <label for="email">Email</label>
                 <input type="email" id="email_creation" name="email">
-                <div id="utilisateur_existant" class="reset">Cet utilisateur existe déjà, connectez-vous.</div>
-                <div id="utilisateur_incomplet" class="reset">Veuillez completer tous les champs.</div>
-                <div id="utilisateur_creer" class="reset">Utilisateur créé avec succès! Connectez vous.</div>
+                <div id="email_creation_existant" class="reset">Cet utilisateur existe déjà, connectez-vous.</div>
+                <div id="email_creation_incomplet" class="reset">Veuillez completer tous les champs.</div>
+                <div id="email_creation_creer" class="reset">Utilisateur créez avec succès! Connectez vous.</div>
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password_creation" name="password">
                 <div>
