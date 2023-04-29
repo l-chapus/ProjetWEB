@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ESIREM Galactique</title>
         <link rel="stylesheet" href="style/style_accueil.css" />
+
+        <script src="../API/js/creer_utilisateur.js"></script>
     </head>
 
     <body>
@@ -33,21 +35,21 @@
                 </select>
                 <button>Connexion</button>
             </form>
-            <form action="../API/php/creer_utilisateur.php" method="post">
+            <form id="creation">
                 <label for="email">Email</label>
                 <input type="email" id="email_creation" name="email">
-                <div id="utilisateur_existant" class=>Cet utilisateur existe déjà, connectez-vous</div>
+                <div id="utilisateur_existant" class="reset">Cet utilisateur existe déjà, connectez-vous.</div>
+                <div id="utilisateur_incomplet" class="reset">Veuillez completer tous les champs.</div>
+                <div id="utilisateur_creer" class="reset">Utilisateur créé avec succès! Connectez vous.</div>
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password_creation" name="password">
                 <div>
                     <input type="checkbox" id="case" name="case">
                     <label>Accepter les conditions générales</label> 
                 </div>
-                <button>Créer mon compte</button>
+                <button type="button" onclick="creation()">Créer mon compte</button>
             </form>
         </section>
-
-        <script src="../API/js/creation_utilisateur_existant.js"></script>
 
     </body>
 
