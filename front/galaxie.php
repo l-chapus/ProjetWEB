@@ -39,6 +39,9 @@ if (!$_SESSION) {
         </div>
     </nav>
     <div id="page">
+        <video autoplay muted loop>
+                <source src="ressources/background_galaxie.mp4">
+        </video>
         <sidebar>
             <button>Galaxie</button>
             <button onclick="window.location.href = 'infrastructures.html';">Infrastructure</button>

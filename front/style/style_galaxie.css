@@ -19,7 +19,7 @@ sidebar {
     display: flex;
     flex-direction: column;
     background-color: #111111;
-    width: 200px;
+    width: 202px;
     height: 100%;
     align-items: center;
 }
@@ -42,6 +42,14 @@ sidebar button {
 }
 sidebar > button:hover {
     cursor: pointer;
+}
+video {
+    left: 200px;
+    top: 69px;
+    position: absolute;
+    display: flex;
+    width: calc(100% - 200px);
+    height: 100%;
 }
 #logo {
     height: 60%;
@@ -99,7 +107,7 @@ nav div {
     background: #0b162c;
     color: #dff5f7;
     padding: 10px;
-    margin: 40px 0 90px 0;
+    margin: 90px 0 90px 0;
     width: 650px;
     border-radius: 10px;
     border: 1px solid #000000;
