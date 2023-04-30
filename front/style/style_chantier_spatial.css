@@ -77,3 +77,9 @@ nav div {
     padding: 0 6px 0 6px;
     height: 30px;
 }
+.v_line_ressource {
+    border-left: 1px solid #cdedf0;
+    height: 30px;
+    left: 5px;
+    position: relative;
+}
