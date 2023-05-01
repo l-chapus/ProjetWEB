@@ -15,7 +15,6 @@
 	display: table-row;
 }
 .divTableCell {
-    justify-content: center;
 	display: table-cell;
 	width: 300px;
     height: 20px;
@@ -28,10 +27,30 @@
 	display: table-header-group;
 	font-weight: bold;
 }
+
 .h_line_table {
     position: absolute;
-    width: 1100px;
+    width: 900px;
     height: 1px;
-    left: 50px;
+    left: 250px;
     background-color: #FEB201;  
+}
+.divTableCellDistance {
+    width: 30px;
+}
+.h_line_table_distance {
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    left: 7.5px;
+    background-color: #FEB201; 
+}
+.divTableImage {
+    position: absolute;
+    right: 152px;
+    height: 20px;
+    padding: 2px;
+}
+.divTableImage:hover {
+    cursor: pointer;
 }

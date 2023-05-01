@@ -47,6 +47,7 @@ if (!$_SESSION) {
             <button onclick="window.location.href = 'infrastructures.php';">Infrastructure</button>
             <button onclick="window.location.href = 'recherche.php';">Recherche</button>
             <button onclick="window.location.href = 'chantier_spatial.php';">Chantier spatial</button>
+            <button onclick="window.location.href = 'flottes.php';">Flottes</button>
         </sidebar>
 
         <div id="principale">
@@ -86,77 +87,88 @@ if (!$_SESSION) {
             </div>
             <div class="divTable">
                 <div class="divTableHeading">
-                    <div class="divTableCell">Distance</div>
+                    <div class="divTableCellDistance"></div>
                     <div class="divTableCell">Nom</div>
                     <div class="divTableCell">Joueur</div>
-                    <div class="divTableCell">?</div>
+                    <div class="divTableCell">Action</div>
                 </div>
                 <div class="h_line_table"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">1</div>
+                    <div class="divTableCellDistance">1</div>
                     <div class="divTableCell">val1</div>
                     <div class="divTableCell"> <?php echo $_SESSION['pseudo'] ?> </div>
-                    <div class="divTableCell">val1</div>
+                    <div class="divTableCell">
+                        <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque">
+                    </div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">2</div>
+                    <div class="divTableCellDistance">2</div>
                     <div class="divTableCell">val1</div>
                     <div class="divTableCell">  </div>
                     <div class="divTableCell">val1</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">3</div>
+                    <div class="divTableCellDistance">3</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">4</div>
+                    <div class="divTableCellDistance">4</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">5</div>
+                    <div class="divTableCellDistance">5</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">6</div>
+                    <div class="divTableCellDistance">6</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">7</div>
+                    <div class="divTableCellDistance">7</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">8</div>
+                    <div class="divTableCellDistance">8</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">9</div>
+                    <div class="divTableCellDistance">9</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                 </div>
                 <div class="h_line_table"></div>
+                <div class="h_line_table_distance"></div>
                 <div class="divTableRow">
-                    <div class="divTableCell">10</div>
+                    <div class="divTableCellDistance">10</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
                     <div class="divTableCell">&nbsp;</div>
@@ -164,7 +176,7 @@ if (!$_SESSION) {
             </div>
 
             <div contentEditable="true">de chose a écrire</div>
-            <div><?php echo $_SESSION['univers'] . ' ' . $_SESSION['email']; ?></div>
+
         </div>
     </div>
 

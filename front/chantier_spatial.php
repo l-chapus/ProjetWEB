@@ -45,6 +45,7 @@ if (!$_SESSION) {
                 <button onclick="window.location.href = 'infrastructures.php';">Infrastructure</button>
                 <button onclick="window.location.href = 'recherche.php';">Recherche</button>
                 <button>Chantier spatial</button>
+                <button onclick="window.location.href = 'flottes.php';">Flottes</button>
             </sidebar>
 
             <div>
