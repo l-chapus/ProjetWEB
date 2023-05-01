@@ -11,8 +11,6 @@ function creation(){
     
     xhr.onreadystatechange = function() {
     if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        console.log("Réponse du script PHP : " + xhr.responseText);
-
         if(xhr.responseText === "formulaire_incomplet"){
             utilisateur_incomplet.classList.replace('reset', 'afficher');
             utilisateur_existant.classList.replace('afficher', 'reset');
@@ -64,8 +62,6 @@ function connexion(){
     
     xhr.onreadystatechange = function() {
     if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        console.log("Réponse du script PHP : " + xhr.responseText);
-        console.log(xhr);
         if(xhr.responseURL === 'http://localhost:3000/front/galaxie.php')
         {
             window.location.href = "../front/galaxie.php";

@@ -1,10 +1,8 @@
 <?php
 session_start();
-
 if (!$_SESSION) {
     header("Location:index.html");
-}
-?>
+}?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,6 +17,7 @@ if (!$_SESSION) {
 
 <body>
     <nav>
+        
         <img id="logo" src="ressources/logo.png" alt="Logo ESIREM Galactique">
         <h1>ESIREM Galactique</h1>
         <div id="ressource">
@@ -39,10 +38,11 @@ if (!$_SESSION) {
         </div>
     </nav>
     <div id="page">
-        <video autoplay muted loop>
-                <source src="ressources/background_galaxie.mp4">
-        </video>
+        
         <sidebar>
+            <div id="pseudo">
+                <?php echo $_SESSION['pseudo'] ?>
+            </div>
             <button>Galaxie</button>
             <button onclick="window.location.href = 'infrastructures.html';">Infrastructure</button>
             <button onclick="window.location.href = 'recherche.html';">Recherche</button>
@@ -50,6 +50,10 @@ if (!$_SESSION) {
         </sidebar>
 
         <div id="principale">
+            <video autoplay muted loop>
+                <source src="ressources/background_galaxie.mp4">
+            </video>
+
             <div id="univers">
                 <h3>Univers choisi : <?php echo $_SESSION['univers'] ?></h3>
 
@@ -91,14 +95,14 @@ if (!$_SESSION) {
                 <div class="divTableRow">
                     <div class="divTableCell">1</div>
                     <div class="divTableCell">val1</div>
-                    <div class="divTableCell">val1</div>
+                    <div class="divTableCell"> <?php echo $_SESSION['pseudo'] ?> </div>
                     <div class="divTableCell">val1</div>
                 </div>
                 <div class="h_line_table"></div>
                 <div class="divTableRow">
                     <div class="divTableCell">2</div>
                     <div class="divTableCell">val1</div>
-                    <div class="divTableCell">val1</div>
+                    <div class="divTableCell">  </div>
                     <div class="divTableCell">val1</div>
                 </div>
                 <div class="h_line_table"></div>

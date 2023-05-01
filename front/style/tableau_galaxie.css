@@ -1,0 +1,37 @@
+.divTable{
+	display: table;
+	width: 1200px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: calc(50% - 600px);
+    background-color: #1c2942;
+    color:#dff5f7;
+    border: 1px solid #000;
+    text-align: center;
+    border-radius: 10px;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableCell {
+    justify-content: center;
+	display: table-cell;
+	width: 300px;
+    height: 20px;
+    padding: 10px;
+}
+.divTableHeading {
+    color:#fff;
+    border-radius: 10px;
+	background-color: #0b162c;
+	display: table-header-group;
+	font-weight: bold;
+}
+.h_line_table {
+    position: absolute;
+    width: 1100px;
+    height: 1px;
+    left: 50px;
+    background-color: #FEB201;  
+}

@@ -29,6 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $hashedPassword = hashPassword($password);
     $stmt = $db->prepare("INSERT INTO utilisateurs (email, password) VALUES (?, ?)");
     $stmt->execute([$email, $hashedPassword]);
+    
     echo 'existe_pas';
   }
   else 

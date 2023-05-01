@@ -49,6 +49,20 @@ if (isset($_POST['email']) && isset($_POST['password']))
             $_SESSION['email'] = $email;
             $_SESSION['loggedin'] = true;
             $_SESSION['univers'] = $univers;
+
+            // Ajoute l'id du pseudo
+            $stmt = $db->prepare("SELECT * FROM utilisateurs WHERE email = ?");
+            $stmt->execute([$email]);
+            $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            $id_utilisateur = $utilisateur['id'];
+
+            $stmt = $db->prepare("SELECT nom FROM pseudo WHERE id = ?");
+            $stmt->execute([$id_utilisateur]);
+            $reponse = $stmt->fetch(PDO::FETCH_ASSOC);
+            $pseudo = $reponse['nom'];
+
+            $_SESSION['pseudo'] = $pseudo;
             //var_dump($_SESSION);
         
             // Rediriger l'utilisateur vers la page d'accueil
