@@ -2,7 +2,7 @@
 session_start();
 if (!$_SESSION) {
     header("Location:index.html");
-}?>
+} ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +17,6 @@ if (!$_SESSION) {
 
 <body>
     <nav>
-        
         <img id="logo" src="ressources/logo.png" alt="Logo ESIREM Galactique">
         <h1>ESIREM Galactique</h1>
         <div id="ressource">
@@ -38,7 +37,7 @@ if (!$_SESSION) {
         </div>
     </nav>
     <div id="page">
-        
+
         <sidebar>
             <div id="pseudo">
                 <?php echo $_SESSION['pseudo'] ?>
@@ -51,9 +50,7 @@ if (!$_SESSION) {
         </sidebar>
 
         <div id="principale">
-            <video autoplay muted loop>
-                <source src="ressources/background_galaxie.mp4">
-            </video>
+            <img id="image_fond" src="/front/ressources/background_galaxie.jpg" alt="Image de fond">
 
             <div id="univers">
                 <h3>Univers choisi : <?php echo $_SESSION['univers'] ?></h3>
@@ -85,99 +82,112 @@ if (!$_SESSION) {
                     </select>
                 </div>
             </div>
-            <div class="divTable">
-                <div class="divTableHeading">
-                    <div class="divTableCellDistance"></div>
-                    <div class="divTableCell">Nom</div>
-                    <div class="divTableCell">Joueur</div>
-                    <div class="divTableCell">Action</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">1</div>
-                    <div class="divTableCell">val1</div>
-                    <div class="divTableCell"> <?php echo $_SESSION['pseudo'] ?> </div>
-                    <div class="divTableCell">
-                        <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque">
+            <div id="information">
+                <div class="divTable">
+                    <div class="divTableHeading">
+                        <div class="divTableCellDistanceHead"></div>
+                        <div class="divTableCellImageHead"></div>
+                        <div class="divTableCellHead">Nom</div>
+                        <div class="divTableCellHead">Joueur</div>
+                        <div class="divTableCellHead">Action</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">1</div>
+                        <div class="divTableCellImage">
+                            <img src="/front/ressources/planetes/pla1.png" alt="">
+                        </div>
+                        <div class="divTableCell">val1</div>
+                        <div class="divTableCell"> <?php echo $_SESSION['pseudo'] ?> </div>
+                        <div class="divTableCell">
+                            <img class="divTableImage image1" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque">
+                        </div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">2</div>
+                        <div class="divTableCellImage">&nbsp;</div>
+                        <div class="divTableCell">val1</div>
+                        <div class="divTableCell"> </div>
+                        <div class="divTableCell">val1</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">3</div>
+                        <div class="divTableCellImage">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">4</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">5</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">6</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">7</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">8</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">9</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div class="h_line_table_distance"></div>
+                    <div class="divTableRow">
+                        <div class="divTableCellDistance">10</div>
+                        <div class="divTableCellImage"></div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">&nbsp;</div>
                     </div>
                 </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">2</div>
-                    <div class="divTableCell">val1</div>
-                    <div class="divTableCell">  </div>
-                    <div class="divTableCell">val1</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">3</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">4</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">5</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">6</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">7</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">8</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">9</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
-                <div class="h_line_table"></div>
-                <div class="h_line_table_distance"></div>
-                <div class="divTableRow">
-                    <div class="divTableCellDistance">10</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                    <div class="divTableCell">&nbsp;</div>
-                </div>
             </div>
-
-            <div contentEditable="true">de chose a écrire</div>
-
         </div>
+
     </div>
 
 </body>

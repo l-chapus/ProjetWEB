@@ -1,12 +1,12 @@
 @import url(tableau_galaxie.css);
 @import url(style_nav.css);
 
-video {
+#image_fond {
     position: absolute;
     width: calc(100% - 200px);
 }
 #principale {
-    width: calc(100% - 200px);;
+    width: calc(100vw - 200px);
     display: flex;
     flex-direction: column;
     background: #000;

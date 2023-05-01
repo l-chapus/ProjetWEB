@@ -1,11 +1,14 @@
-.divTable{
-	display: table;
-	width: 1200px;
+#information {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 1200px;
+    left: calc(50% - 600px);
     align-items: center;
     justify-content: center;
-    position: relative;
-    left: calc(50% - 600px);
-    background-color: #1c2942;
+}
+.divTable{
+	display: table;
     color:#dff5f7;
     border: 1px solid #000;
     text-align: center;
@@ -16,18 +19,15 @@
 }
 .divTableCell {
 	display: table-cell;
+    background-color: #1c2942;
 	width: 300px;
-    height: 20px;
-    padding: 10px;
+    height: 50px;
+    padding: 20px;
 }
 .divTableHeading {
-    color:#fff;
-    border-radius: 10px;
-	background-color: #0b162c;
 	display: table-header-group;
-	font-weight: bold;
+    border-radius: 10px;
 }
-
 .h_line_table {
     position: absolute;
     width: 900px;
@@ -36,21 +36,42 @@
     background-color: #FEB201;  
 }
 .divTableCellDistance {
-    width: 30px;
+    display: table-cell;
+    width: 20px;
+    background-color: #1c2942;
+    padding-top: 30px;
 }
 .h_line_table_distance {
     position: absolute;
-    width: 15px;
+    width: 10px;
     height: 1px;
-    left: 7.5px;
+    left: 6.5px;
     background-color: #FEB201; 
 }
+.divTableCellImage {
+    display: table-cell;
+    width: 200px;
+}
 .divTableImage {
-    position: absolute;
-    right: 152px;
-    height: 20px;
+    height: 25px;
     padding: 2px;
 }
 .divTableImage:hover {
     cursor: pointer;
+}
+.divTableCellImageHead, .divTableCellDistanceHead {
+    display: table-cell;
+}
+.divTableCellHead {
+    padding: 5px;
+    height: 30px;
+    display: table-cell;
+    background-color: #0b162c;
+    font-weight: bold;
+    color:#fff;
+}
+.divTableCellImage img {
+    position: relative;
+    height: 50px;
+    top: 24px;
 }
