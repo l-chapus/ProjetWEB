@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!$_SESSION) {
+    header("Location:index.html");
+}?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ESIREM Galactique</title>
-        <link rel="stylesheet" href="style/style_infrastructures.css" />
+        <link rel="stylesheet" href="style/style_chantier_spatial.css" />
     </head>
 
     <body>
@@ -32,15 +38,18 @@
         </nav>
         <div id="page"> 
             <sidebar>
-                <button onclick="window.location.href = 'galaxie.html';">Galaxie</button>
-                <button>Infrastructure</button>
-                <button onclick="window.location.href = 'recherche.html';">Recherche</button>
-                <button onclick="window.location.href = 'chantier_spatial.html';">Chantier spatial</button>
+                <div id="pseudo">
+                    <?php echo $_SESSION['pseudo'] ?>
+                </div>
+                <button onclick="window.location.href = 'galaxie.php';">Galaxie</button>
+                <button onclick="window.location.href = 'infrastructures.php';">Infrastructure</button>
+                <button onclick="window.location.href = 'recherche.php';">Recherche</button>
+                <button>Chantier spatial</button>
             </sidebar>
 
             <div>
-                <div>de chose a pa écrire</div> 
-                <div>de chose a ne pas écrire</div>
+                <div>de chose a écrire</div> 
+                <div>toto</div>
             </div>
         </div>  
     </body>

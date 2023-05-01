@@ -44,9 +44,9 @@ if (!$_SESSION) {
                 <?php echo $_SESSION['pseudo'] ?>
             </div>
             <button>Galaxie</button>
-            <button onclick="window.location.href = 'infrastructures.html';">Infrastructure</button>
-            <button onclick="window.location.href = 'recherche.html';">Recherche</button>
-            <button onclick="window.location.href = 'chantier_spatial.html';">Chantier spatial</button>
+            <button onclick="window.location.href = 'infrastructures.php';">Infrastructure</button>
+            <button onclick="window.location.href = 'recherche.php';">Recherche</button>
+            <button onclick="window.location.href = 'chantier_spatial.php';">Chantier spatial</button>
         </sidebar>
 
         <div id="principale">
