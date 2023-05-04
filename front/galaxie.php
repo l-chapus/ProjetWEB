@@ -95,22 +95,26 @@ if (!$_SESSION) {
                     <div class="divTableRow">
                         <div class="divTableCellDistance">1</div>
                         <div class="divTableCellImage">
-                            <img src="/front/ressources/planetes/pla1.png" alt="">
+                            <img src="/front/ressources/planetes/pla1.png" alt="image planete 2">
                         </div>
-                        <div class="divTableCell">val1</div>
+                        <div class="divTableCell">Planète 1</div>
                         <div class="divTableCell"> <?php echo $_SESSION['pseudo'] ?> </div>
                         <div class="divTableCell">
-                            <img class="divTableImage image1" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 1">
                         </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
                     <div class="divTableRow">
                         <div class="divTableCellDistance">2</div>
-                        <div class="divTableCellImage">&nbsp;</div>
+                        <div class="divTableCellImage">
+                            <img src="/front/ressources/planetes/pla11.png" alt="image planete 2">
+                        </div>
                         <div class="divTableCell">val1</div>
-                        <div class="divTableCell"> </div>
-                        <div class="divTableCell">val1</div>
+                        <div class="divTableCell"></div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 2">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -119,7 +123,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 3">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -128,7 +134,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 4">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -137,7 +145,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 5">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -146,7 +156,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 6">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -155,7 +167,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 7">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -164,7 +178,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 8">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -173,7 +189,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 9">
+                        </div>
                     </div>
                     <div class="h_line_table"></div>
                     <div class="h_line_table_distance"></div>
@@ -182,7 +200,9 @@ if (!$_SESSION) {
                         <div class="divTableCellImage"></div>
                         <div class="divTableCell">&nbsp;</div>
                         <div class="divTableCell">&nbsp;</div>
-                        <div class="divTableCell">&nbsp;</div>
+                        <div class="divTableCell">
+                            <img class="divTableImage" src="/front/ressources/vaisseaux_attaque.png" alt="boutton attaque planete 10">
+                        </div>
                     </div>
                 </div>
             </div>
