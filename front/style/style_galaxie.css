@@ -1,8 +1,12 @@
 @import url(tableau_galaxie.css);
 @import url(style_nav.css);
 
+sidebar{
+    height: 1400px;
+}
 #image_fond {
     position: absolute;
+    height: 1400px;
     width: calc(100% - 200px);
 }
 #principale {

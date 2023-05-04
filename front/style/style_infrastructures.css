@@ -1,5 +1,7 @@
 @import url(style_nav.css);
-
+sidebar{
+    height: 2300px;
+}
 #principale {
     display: flex;
     flex-direction: column;
@@ -39,6 +41,10 @@ section div button {
     color: #dff5f7;
     border-radius: 10px;
     border: 1px solid #000;
+}
+section div button:hover {
+    cursor: pointer;
+    background-color: #5183b3;
 }
 .image_categorie {
     width: 170px;
