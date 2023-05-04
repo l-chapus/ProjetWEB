@@ -48,9 +48,56 @@ if (!$_SESSION) {
                 <button onclick="window.location.href = 'flottes.php';">Flottes</button>
             </sidebar>
 
-            <div>
-                <div>de chose a écrire</div> 
-                <div>toto</div>
+            <div id="principale">
+                 <div id="chatier_spatial">
+                    <section id="chasseur">
+                        <h3>Chasseurs</h3>
+                        <img class="image_vaisseaux">
+                        <div class="info">
+                            <p>Disponible : 0</p>
+                            <p>Métal : 3 000</p>
+                            <p>Deutérium : 500</p>
+                            <p>Point d'attaque : 75</p>
+                            <p>Point de défense: 50</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>20s</div>
+                        </button>
+                    </section>
+                    <section id="croiseur">
+                        <h3>Croiseurs</h3>
+                        <img class="image_vaisseaux">
+                        <div class="info">
+                            <p>Disponible : 0</p>
+                            <p>Métal : 20 000</p>
+                            <p>Deutérium : 5 000</p>
+                            <p>Point d'attaque : 400</p>
+                            <p>Point de défense: 150</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>120s</div>
+                        </button>
+                    </section>
+                    <section id="transporteur">
+                        <h3>Transporteurs</h3>
+                        <img class="image_vaisseaux">
+                        <div class="info">
+                            <p>Disponible : 0</p>
+                            <p>Métal : 6 000</p>
+                            <p>Deutérium : 1 500</p>
+                            <p>Point d'attaque : 0</p>
+                            <p>Point de défense: 50</p>
+                            <p>Capacité de fret: 100 000</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>55s</div>
+                        </button>
+                    </section>
+                 </div>
+                
             </div>
         </div>  
     </body>

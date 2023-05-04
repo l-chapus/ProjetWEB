@@ -1,1 +1,55 @@
 @import url(style_nav.css);
+
+
+#principale {
+    width: calc(100% - 200px);
+}
+#chatier_spatial {
+    display: flex;
+    flex-direction: row;
+    color:#dff5f7;
+    justify-content: center;
+    margin-top: 70px;
+}
+section{
+    background-color: #0b162c;
+    margin: 10px;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border-radius: 50px;
+    border: 1px solid #000;
+}
+.image_vaisseaux {
+    border: 1px solid #fff;
+    height: 150px;
+    width: 200px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1c2942;
+    width: 300px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #dff5f7;
+}
+section button {
+    background-color: #3b556d;
+    color: #dff5f7;
+    border-radius: 10px;
+    border: 1px solid #000;
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+}
+section button:hover {
+    cursor: pointer;
+    background-color: #5183b3;
+}
