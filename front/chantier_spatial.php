@@ -52,49 +52,80 @@ if (!$_SESSION) {
                  <div id="chatier_spatial">
                     <section id="chasseur">
                         <h3>Chasseurs</h3>
-                        <img class="image_vaisseaux">
+                        <img class="image_vaisseaux" src="/front/ressources/vaisseaux/chasseur.png" alt="Image du vaisseau chasseur">
                         <div class="info">
                             <p>Disponible : 0</p>
+                            <div class="h_line_vaisseaux"></div>
                             <p>Métal : 3 000</p>
                             <p>Deutérium : 500</p>
+                            <div class="h_line_vaisseaux"></div>
                             <p>Point d'attaque : 75</p>
                             <p>Point de défense: 50</p>
                         </div>
+                        <div class="afficher">Nécessite le chantier spatial</div>
                         <button>
                             <div>Construire</div>
                             <div>20s</div>
                         </button>
                     </section>
+
                     <section id="croiseur">
                         <h3>Croiseurs</h3>
-                        <img class="image_vaisseaux">
+                        <img class="image_vaisseaux" src="/front/ressources/vaisseaux/croiseur.png" alt="Image du vaisseau croiseur">
                         <div class="info">
                             <p>Disponible : 0</p>
+                            <div class="h_line_vaisseaux"></div>
                             <p>Métal : 20 000</p>
                             <p>Deutérium : 5 000</p>
+                            <div class="h_line_vaisseaux"></div>
                             <p>Point d'attaque : 400</p>
                             <p>Point de défense: 150</p>
                         </div>
+                        <div class="afficher">Nécessite le chantier spatial</div>
+                        <div class="afficher">Nécessite la technologie ions niveau 4</div>
                         <button>
                             <div>Construire</div>
                             <div>120s</div>
                         </button>
                     </section>
+
                     <section id="transporteur">
                         <h3>Transporteurs</h3>
-                        <img class="image_vaisseaux">
+                        <img class="image_vaisseaux" src="/front/ressources/vaisseaux/transporteur.png" alt="Image du vaisseau transporteur">
                         <div class="info">
                             <p>Disponible : 0</p>
+                            <div class="h_line_vaisseaux"></div>
                             <p>Métal : 6 000</p>
                             <p>Deutérium : 1 500</p>
+                            <div class="h_line_vaisseaux"></div>
                             <p>Point d'attaque : 0</p>
                             <p>Point de défense: 50</p>
                             <p>Capacité de fret: 100 000</p>
                         </div>
+                        <div class="afficher">Nécessite le chantier spatial</div>
                         <button>
                             <div>Construire</div>
                             <div>55s</div>
                         </button>
+                    </section>
+
+                    <section id="colonisation">
+                        <h3>Vaisseau de colonisation</h3>
+                        <img class="image_vaisseaux" src="/front/ressources/vaisseaux/colonisateur.png" alt="Image du vaisseau colonisateur">
+                        <div class="info">
+                            <p>Disponible : 0</p>
+                            <div class="h_line_vaisseaux"></div>
+                            <p>Métal : 10 000</p>
+                            <p>Deutérium : 10 000</p>
+                            <div class="h_line_vaisseaux"></div>
+                            <p>Point d'attaque : 0</p>
+                            <p>Point de défense: 50</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>120s</div>
+                        </button>
+                        <div class="reset">Nécessite le chantier spatial</div>
                     </section>
                  </div>
                 

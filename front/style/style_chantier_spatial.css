@@ -14,8 +14,8 @@
 section{
     background-color: #0b162c;
     margin: 10px;
-    width: 400px;
-    height: 600px;
+    width: 300px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +33,7 @@ section{
     flex-direction: column;
     align-items: center;
     background-color: #1c2942;
-    width: 300px;
+    width: 250px;
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -52,4 +52,24 @@ section button {
 section button:hover {
     cursor: pointer;
     background-color: #5183b3;
+}
+.h_line_vaisseaux{
+    position: relative;
+    width: 200px;
+    height: 1px;
+    background-color: #FEB201; 
+}
+.reset {
+    display: none;
+}
+.afficher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fe7b01;
+    width: 250px;
+    padding: 5px 0 5px 0;
+    border-radius: 10px;
+    background-color: #fe270191;
+    margin-bottom: 10px;
 }
