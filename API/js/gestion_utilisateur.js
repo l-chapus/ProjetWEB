@@ -1,3 +1,22 @@
+window.addEventListener('load', () => {
+    var xmlhttp = new XMLHttpRequest();
+
+    // Définit la fonction à exécuter lorsque la réponse est reçue
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Met à jour le contenu du menu déroulant avec la réponse du script PHP
+        document.getElementById("univers_select").innerHTML = this.responseText;
+    }
+    };
+
+    // Envoie une requête GET au script PHP
+    xmlhttp.open("GET", "../API/php/selection_univers.php", true);
+    xmlhttp.send()
+
+});
+
+
+
 function creation(){
     const utilisateur_existant = document.getElementById("email_creation_existant");
     const utilisateur_incomplet = document.getElementById("email_creation_incomplet");

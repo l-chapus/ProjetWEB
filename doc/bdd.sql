@@ -12,14 +12,18 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Listage de la structure de la base pour esirem_galactique
+CREATE DATABASE IF NOT EXISTS `esirem_galactique` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `esirem_galactique`;
+
 -- Listage de la structure de la table esirem_galactique. galaxie
 CREATE TABLE IF NOT EXISTS `galaxie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idUnivers` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_galaxie_univers` (`idUnivers`),
-  CONSTRAINT `FK_galaxie_univers` FOREIGN KEY (`idUnivers`) REFERENCES `univers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_galaxie_univers` (`idUnivers`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.galaxie : ~0 rows (environ)
@@ -34,9 +38,7 @@ CREATE TABLE IF NOT EXISTS `planete` (
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_planete_position` (`idPosition`),
-  KEY `FK_planete_systemeSolaire` (`idSystemSolaire`),
-  CONSTRAINT `FK_planete_position` FOREIGN KEY (`idPosition`) REFERENCES `posistion` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_planete_systemeSolaire` FOREIGN KEY (`idSystemSolaire`) REFERENCES `systemsolaire` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `FK_planete_systemeSolaire` (`idSystemSolaire`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.planete : ~0 rows (environ)
@@ -53,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `posistion` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.posistion : ~10 rows (environ)
+-- Listage des données de la table esirem_galactique.posistion : ~8 rows (environ)
 /*!40000 ALTER TABLE `posistion` DISABLE KEYS */;
 INSERT INTO `posistion` (`id`, `taille`, `bonusSolaire`, `bonusMetal`, `bonusDeuterium`) VALUES
 	(1, 90, 30, 0, -15),
@@ -315,9 +317,7 @@ CREATE TABLE IF NOT EXISTS `recherche` (
   KEY `FK_recherche_recherche` (`idRechercheMere`),
   KEY `FK_recherche_univers` (`idUtilisateur`) USING BTREE,
   KEY `FK_recherche_planete` (`idPlanete`),
-  CONSTRAINT `FK_recherche_planete` FOREIGN KEY (`idPlanete`) REFERENCES `planete` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_recherche_recherche` FOREIGN KEY (`idRechercheMere`) REFERENCES `recherche` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_recherche_utilisateurs` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_recherche_recherche` FOREIGN KEY (`idRechercheMere`) REFERENCES `recherche` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.recherche : ~0 rows (environ)
@@ -334,8 +334,7 @@ CREATE TABLE IF NOT EXISTS `ressources` (
   `energie` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_ressources_utilisateur` (`idUtilisateurs`),
-  KEY `FK_ressources_univers` (`idUnivers`),
-  CONSTRAINT `FK_ressources_univers` FOREIGN KEY (`idUnivers`) REFERENCES `univers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_ressources_univers` (`idUnivers`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.ressources : ~0 rows (environ)
@@ -348,8 +347,7 @@ CREATE TABLE IF NOT EXISTS `systemsolaire` (
   `idGalaxie` int(11) NOT NULL,
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_systemeSolaire_galaxie` (`idGalaxie`),
-  CONSTRAINT `FK_systemeSolaire_galaxie` FOREIGN KEY (`idGalaxie`) REFERENCES `galaxie` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK_systemeSolaire_galaxie` (`idGalaxie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.systemsolaire : ~0 rows (environ)
@@ -373,12 +371,10 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `email` text NOT NULL,
   `password` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.utilisateurs : ~1 rows (environ)
+-- Listage des données de la table esirem_galactique.utilisateurs : ~0 rows (environ)
 /*!40000 ALTER TABLE `utilisateurs` DISABLE KEYS */;
-INSERT INTO `utilisateurs` (`id`, `email`, `password`) VALUES
-	(36, 'diabolodu30@gmail.com', '$2y$10$.sgFgA8fK.APMW73haaux.MT20bxJmSG86GHgVrtreOsOYx.lnFwy');
 /*!40000 ALTER TABLE `utilisateurs` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

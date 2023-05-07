@@ -9,9 +9,6 @@ window.addEventListener('load', () => {
             if (univers === "nouveau_univers") {
                 creation_univers();
             }
-            else {
-                console.log("non");
-            }
     }
     
     else {

@@ -52,7 +52,7 @@ if (!$_SESSION) {
         </sidebar>
 
         <div id="principale">
-            <img id="image_fond" src="/front/ressources/background_galaxie.jpg" alt="Image de fond">
+            <img id="image_fond" src="/front/ressources/background_galaxie3.jpg" alt="Image de fond">
 
             <div id="univers">
                 <h3>Univers choisi : <?php echo $_SESSION['univers'] ?></h3>

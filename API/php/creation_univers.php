@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $count = $stmt->fetchColumn();
     
     //on ajoute l'univers à la base de données avec le bon nom
-    $nom_univers = "univers " . strval($count);
+    $nom_univers = "Univers " . strval($count);
     $stmt2 = $db->prepare("INSERT INTO univers (nom) VALUES (?);");
     $stmt2->execute([$nom_univers]);
 
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     for($i = 1; $i <= 5; $i++) {
         //ajoute la galaxie
-        $nom_galaxie = "galaxie " . strval($i);
+        $nom_galaxie = "Galaxie " . strval($i);
         $galaxie = $db->prepare("INSERT INTO galaxie (idUnivers,nom) VALUES (?,?);");
         $galaxie->execute([$id_univers, $nom_galaxie]);
 
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         for($j = 1; $j <= 10; $j++) {
             //ajoute le système solaire
-            $nom_syst_solaire = "système solaire " . strval($j);
+            $nom_syst_solaire = "Système solaire " . strval($j);
             $syst_solaire = $db->prepare("INSERT INTO systemsolaire (idGalaxie,nom) VALUES (?,?);");
             $syst_solaire->execute([$id_galaxie, $nom_syst_solaire]);
 
@@ -48,6 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $nombre_planete = rand(4, 10);
             $position_utiliser = array();
 
+            //tire au sort les positions des planètes
             for($k = 1; $k <= $nombre_planete; $k++) {
                 $position = rand(1, 10);
                 //vérifie que la position n'est pas déjà utilisé
@@ -55,10 +56,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     $position = rand(1, 10);
                 }
                 array_push($position_utiliser , $position);
+            }
 
-                $nom_planete = "planète " . strval($position);
+            //tire les positions dans l'ordre croissant
+            sort($position_utiliser);
+
+            //ajoute les planètes à la base de données
+            for($k = 1; $k <= $nombre_planete; $k++) {  
+                $nom_planete = "Planète " . strval($position);
                 $planete = $db->prepare("INSERT INTO planete (idPosition,idSystemSolaire,nom) VALUES (?,?,?);");
-                $planete->execute([$position, $id_syst_solaire, $nom_planete]);
+                $planete->execute([$position_utiliser[$k], $id_syst_solaire, $nom_planete]);
             }
         }
     }
