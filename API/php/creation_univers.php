@@ -62,8 +62,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             sort($position_utiliser);
 
             //ajoute les planètes à la base de données
-            for($k = 1; $k <= $nombre_planete; $k++) {  
-                $nom_planete = "Planète " . strval($position);
+            for($k = 0; $k < $nombre_planete; $k++) {  
+                $nom_planete = "Planète " . strval($k+1);
                 $planete = $db->prepare("INSERT INTO planete (idPosition,idSystemSolaire,nom) VALUES (?,?,?);");
                 $planete->execute([$position_utiliser[$k], $id_syst_solaire, $nom_planete]);
             }
