@@ -16,6 +16,8 @@ if (!$_SESSION) {
 </head>
 
 <body>
+    <script src="../API/js/session.js"></script>
+
     <nav>
         <img id="logo" src="ressources/logo.png" alt="Logo ESIREM Galactique">
         <h1>ESIREM Galactique</h1>
