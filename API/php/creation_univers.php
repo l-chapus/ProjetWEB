@@ -10,11 +10,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $count = $stmt->fetchColumn();
     
     //on ajoute l'univers à la base de données avec le bon nom
-    $nom_univers = "Univers " . strval($count);
+    $nom_univers = "Univers " . strval($count) + 1;
     $stmt2 = $db->prepare("INSERT INTO univers (nom) VALUES (?);");
     $stmt2->execute([$nom_univers]);
 
-    //l'id est simplement le numéro de l'univer + 1 parcequ'on commence à 0 
+    //l'id est simplement le numéro de l'univers + 1 parcequ'on commence à 0 
     $id_univers = $count + 1;
 
     //on va ensuite créé les galaxie, les systèmes solaires et les planètes
@@ -63,15 +63,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
             //ajoute les planètes à la base de données
             for($k = 0; $k < $nombre_planete; $k++) {  
+                $numero_image = rand(1, 23);
                 $nom_planete = "Planète " . strval($k+1);
-                $planete = $db->prepare("INSERT INTO planete (idPosition,idSystemSolaire,nom) VALUES (?,?,?);");
-                $planete->execute([$position_utiliser[$k], $id_syst_solaire, $nom_planete]);
+                $planete = $db->prepare("INSERT INTO planete (idPosition,idSystemSolaire,idUnivers,nom,NumImage) VALUES (?,?,?,?,?);");
+                $planete->execute([$position_utiliser[$k], $id_syst_solaire, $id_univers, $nom_planete, $numero_image]);
             }
         }
     }
 
-    session_start();
-    $_SESSION['univers'] = $nom_univers;
+    //session_start();
+    //$_SESSION['univers'] = $nom_univers;
 }
 
 ?>

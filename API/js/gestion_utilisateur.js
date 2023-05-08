@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    var xmlhttp = new XMLHttpRequest();
+    const xmlhttp = new XMLHttpRequest();
 
     // Définit la fonction à exécuter lorsque la réponse est reçue
     xmlhttp.onreadystatechange = function() {
