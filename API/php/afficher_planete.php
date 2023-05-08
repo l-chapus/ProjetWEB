@@ -100,6 +100,17 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     }
     if($planetes){
         if ($planetes['idPosition'] === 10) {
+            $idUtilisateur = $planetes['idUtilisateurs'];
+                if($idUtilisateur != null){
+                    $sql = "SELECT * FROM pseudo WHERE id='$idUtilisateur'";
+                    $user = $db->query($sql);
+                    $utilisateur = $user->fetch(PDO::FETCH_ASSOC);
+                    $pseudo = $utilisateur['nom'];
+                }
+                else{
+                    $pseudo="";
+                }
+            
             $tableau .= '<div class="h_line_table"></div>';
             $NumImage = $planetes['NumImage'];
             $nom = $planetes['nom'];
@@ -109,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
                                 <img src='/front/ressources/planetes/pla$NumImage.png' alt='image planete 10'>
                             </div>
                             <div class='divTableCell'>$nom</div>
-                            <div class='divTableCell'>utilisateur</div>
+                            <div class='divTableCell'>$pseudo</div>
                             <div class='divTableCell'>
                                 <img class='divTableImage' src='/front/ressources/vaisseaux_attaque.png' alt='boutton attaque planete 10'>
                             </div>
@@ -128,11 +139,5 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     }
 
     echo $tableau;
-    //var_dump($planetes['idPosition']);
-
-    //$planetes = $result->fetch(PDO::FETCH_ASSOC);
-    //var_dump($planetes);
-
-    // "<option value=\"$univers\">$univers</option>"
 }
 ?>
