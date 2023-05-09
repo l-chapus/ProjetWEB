@@ -63,7 +63,6 @@ if (isset($_POST['email']) && isset($_POST['password']))
             $pseudo = $reponse['nom'];
 
             $_SESSION['pseudo'] = $pseudo;
-            //var_dump($_SESSION);
         
             // Rediriger l'utilisateur vers la page d'accueil
             header("Location:../../front/galaxie.php");
