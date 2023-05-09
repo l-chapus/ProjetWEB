@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `posistion` (
   `bonusMetal` int(11) DEFAULT NULL,
   `bonusDeuterium` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.posistion : ~10 rows (environ)
 /*!40000 ALTER TABLE `posistion` DISABLE KEYS */;
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `pseudo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=653 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.pseudo : ~200 rows (environ)
 /*!40000 ALTER TABLE `pseudo` DISABLE KEYS */;
