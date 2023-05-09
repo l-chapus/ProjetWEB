@@ -1,1 +1,60 @@
 @import url(style_nav.css);
+sidebar{
+    height: 2300px;
+}
+#principale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 200px);
+    color:#dff5f7;
+}
+.categorie {
+    display: flex;
+    flex-direction: row;
+    background-color: #1c2942;
+    position: relative;
+}
+h3{
+    display: flex;
+    justify-content: center;
+}
+section {
+    background-color: #0b162c;
+    width: 900px;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+section div button {
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3b556d;
+    color: #dff5f7;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+section div button:hover {
+    cursor: pointer;
+    background-color: #5183b3;
+}
+.image_categorie {
+    width: 170px;
+    height: 150px;
+    margin: 10px;
+    margin-right: 15px;
+}
+.h_line_table {
+    position: relative;
+    width: 850px;
+    height: 1px;
+    left: 25px;
+    background-color: #FEB201;  
+}

@@ -7,11 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ESIREM Galactique</title>
         <link rel="stylesheet" href="style/style_accueil.css" />
-
-        <script src="../API/js/gestion_utilisateur.js"></script>
     </head>
 
     <body>
+        <script src="../API/js/gestion_utilisateur.js"></script>
         
         <nav>
             <img src="ressources/logo.png">
@@ -34,8 +33,6 @@
                 <div id="password_connexion_incorrect" class="reset">Mot de passe incorrect.</div>
                 <label for="univers">Univers</label>
                 <select name="univers" id="univers_select">
-                    <option value="" disabled selected hidden>--Choisissez une option--</option>
-                    <option value="nouveau-univers">Nouveau univers</option>
                 </select>
                 <div id="univers_manquant" class="reset">Veuillez choisir un univers.</div>
                 <button type="button" onclick="connexion()">Connexion</button>

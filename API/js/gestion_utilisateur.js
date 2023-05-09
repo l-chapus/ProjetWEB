@@ -1,3 +1,22 @@
+window.addEventListener('load', () => {
+    const xmlhttp = new XMLHttpRequest();
+
+    // Définit la fonction à exécuter lorsque la réponse est reçue
+    xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Met à jour le contenu du menu déroulant avec la réponse du script PHP
+        document.getElementById("univers_select").innerHTML = this.responseText;
+    }
+    };
+
+    // Envoie une requête GET au script PHP
+    xmlhttp.open("GET", "../API/php/selection_univers.php", true);
+    xmlhttp.send()
+
+});
+
+
+
 function creation(){
     const utilisateur_existant = document.getElementById("email_creation_existant");
     const utilisateur_incomplet = document.getElementById("email_creation_incomplet");
@@ -45,7 +64,6 @@ function reset(){
 
 
 function connexion(){
-    console.log("test");
     const email_connexion_manquant = document.getElementById("email_connexion_manquant");
     const email_connexion_inconnu = document.getElementById("email_connexion_inconnu");
     const password_connexion_manquant = document.getElementById("password_connexion_manquant");
@@ -56,7 +74,7 @@ function connexion(){
     const password = document.getElementById("password_connexion");
     const univers = document.getElementById("univers_select");
     
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open("POST", "../API/php/connexion.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     

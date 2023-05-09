@@ -48,9 +48,170 @@ if (!$_SESSION) {
                 <button onclick="window.location.href = 'flottes.php';">Flottes</button>
             </sidebar>
 
-            <div>
-                <div>de chose a pa écrire</div> 
-                <div>de chose a ne pas écrire</div>
+            <div id="principale">
+
+                <section id="installation">
+                    <h3>Installations</h3>
+                    <div class="h_line_table"></div>
+                    <div id="labo_de_recheche" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Laboratiore de recheche</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 1 000</p>
+                            <p>Energie : 500</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>50s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="chantier_spatial" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Chantier spatial</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 500</p>
+                            <p>Energie : 500</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>50s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="usine_nanite" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Usine de nanites</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 1 000</p>
+                            <p>Energie : 5 000</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>10 minutes</div>
+                        </button>
+                    </div>
+                </section>
+
+                <section id="ressources">
+                    <h3>Ressources</h3>
+                    <div class="h_line_table"></div>
+                    <div id="mine_metal" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Mine de métal</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 100</p>
+                            <p>Energie : 10</p>
+                            <p>Production : 3 / minutes</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>10s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="synthe_deuterium" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Sythétiseur de deuterium</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 200</p>
+                            <p>Energie : 50</p>
+                            <p>Production : 1 / minutes</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>25s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="centrale_solaire" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Centrale solaire</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 150</p>
+                            <p>Deuterium : 20</p>
+                            <p>Production : 20</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>10s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="centrale_fusion" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Centrale à fusion</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 5 000</p>
+                            <p>Deuterium : 2 000</p>
+                            <p>Production : 50</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>2 minutes</div>
+                        </button>
+                    </div>
+                </section>
+ 
+                <section id="defense">
+                    <h3>Défense</h3>
+                    <div class="h_line_table"></div>
+                    <div id="artillerie_laser" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Artillerie laser</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 150</p>
+                            <p>Deuterium : 20</p>
+                            <p>Point d'attaque : 100</p>
+                            <p>Point de défense : 25</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>10s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="canon_ions" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Canon à ions</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 5 000</p>
+                            <p>Deuterium : 1 000</p>
+                            <p>Point d'attaque : 250</p>
+                            <p>Point de défense : 200</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>40s</div>
+                        </button>
+                    </div>
+                    <div class="h_line_table"></div>
+                    <div id="bouclier" class="categorie">
+                        <img class="image_categorie">
+                        <div>
+                            <p>Bouclier</p>
+                            <p>Niveau actuel : 0</p>
+                            <p>Métal : 10 000</p>
+                            <p>Deuterium : 5 000</p>
+                            <p>Energie : 1 000</p>
+                            <p>Point d'attaque : 0</p>
+                            <p>Point de défense : 2 000</p>
+                        </div>
+                        <button>
+                            <div>Construire</div>
+                            <div>60s</div>
+                        </button>
+                    </div>
+                </section>
             </div>
         </div>  
     </body>

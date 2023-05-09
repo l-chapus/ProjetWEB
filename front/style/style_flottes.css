@@ -1,0 +1,121 @@
+@import url(style_nav.css);
+
+#principale {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 200px);
+    color:#dff5f7;
+}
+#attaque {
+    width: 60%;
+    background-color: #0b162c;
+    margin: 20px 0px 20px 20px;
+}
+#rapport {
+    width: 40%;
+    background-color: #0b162c;
+    margin: 20px 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#vaisseaux {
+    display: flex;
+    flex-direction: row;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c2942;
+    margin: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+    border: 1px solid#dff5f7;
+    border-radius: 15px;
+}
+.image_vaisseaux {
+    height: 100px;
+    width: 150px;
+}
+section input {
+    align-items: center;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b556d;
+    border: 1px solid #FEB201; 
+    color: #fff;
+    height: 20px;
+}
+#selection {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #fff;
+    margin: 70px 10px 50px 10px;
+    border-radius: 10px;
+}
+#univers {
+    display: flex;
+    flex-direction: column;
+}
+.select {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 10px 10px;
+    background-color: #1c2942;
+    width: 340px;
+    height: 35px;
+    align-items: center;
+    justify-content: right;
+    border-radius: 5px;
+}
+#action {
+    position: relative;
+    left: 350px;   
+}
+.boutton_action {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin-top: 125px;
+    height: 30px;
+    width: 90px;
+    background-color: #3b556d;
+    color: #dff5f7;
+}
+.boutton_action:hover {
+    cursor: pointer;
+    background-color: #5183b3;
+}
+select {
+    margin-right: 10px;
+    margin-left: 20px;
+    height: 20px;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: #3b556d;
+    color: #dff5f7;
+}
+#v_line_principale {
+    position: absolute;
+    width: 1px;
+    height: 850px;
+    background-color: #FEB201;
+    left: calc(60% + 75px);
+    top: 50px;
+}
+#h_line_rapport {
+    width: 80%;
+    height: 1px;
+    background-color: #FEB201;
+    margin-top: 20px;
+}
+#rapport_historique {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
