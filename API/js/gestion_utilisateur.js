@@ -12,7 +12,21 @@ window.addEventListener('load', () => {
     // Envoie une requête GET au script PHP
     xmlhttp.open("GET", "../API/php/selection_univers.php", true);
     xmlhttp.send()
-
+    
+    // Récupérer le bouton de connexion
+    const button_connexion = document.getElementById("boutton_connexion");
+    // Ajouter un écouteur d'événements click au bouton
+    button_connexion.addEventListener("click", function() {
+        connexion();
+    });
+    
+    // Récupérer le bouton de création de compte
+    const bouton_creation = document.getElementById("bouton_creation");
+    // Ajouter un écouteur d'événements click au bouton
+    bouton_creation.addEventListener("click", function() {
+        creation();
+    });
+    
 });
 
 

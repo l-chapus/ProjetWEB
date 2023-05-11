@@ -35,7 +35,7 @@
                 <select name="univers" id="univers_select">
                 </select>
                 <div id="univers_manquant" class="reset">Veuillez choisir un univers.</div>
-                <button type="button" onclick="connexion()">Connexion</button>
+                <button type="button" id="boutton_connexion">Connexion</button>
             </form>
             <form id="creation">
                 <label for="email">Email</label>
@@ -46,10 +46,10 @@
                 <label for="password">Mot de passe</label>
                 <input type="password" id="password_creation" name="password">
                 <div>
-                    <input type="checkbox" id="case" name="case">
+                    <input type="checkbox" id="case" name="case" required>
                     <label>Accepter les conditions générales</label> 
                 </div>
-                <button type="button" onclick="creation()">Créer mon compte</button>
+                <button type="button" id="bouton_creation">Créer mon compte</button>
             </form>
         </section>
 
