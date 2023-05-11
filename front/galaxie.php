@@ -17,28 +17,26 @@ if (!$_SESSION) {
 
 <body>
     <script src="../API/js/gestion_galaxie.js"></script>
+    <script src="../API/js/planete_nav.js"></script>
 
     <nav>
-        <div id="ref_planete">
-            <img src="ressources/nav/planete.png" alt="Logo de la planète">
-            G5-S8-P1
-        </div>
+        <div id="ref_planete"></div>
         <img id="logo" src="ressources/nav/logo.png" alt="Logo ESIREM Galactique">
         <h1>ESIREM Galactique</h1>
         <div id="ressource">
             <div id="energie">
                 <img src="ressources/nav/energie.png" alt="Logo énergie">
-                <p>13322</p>
+                <p><?php echo $_SESSION['energie'] ?></p>
             </div>
             <div class="v_line_ressource"></div>
             <div id="deuterium">
                 <img src="ressources/nav/deuterium.png" alt="Logo deutérium">
-                <p>122</p>
+                <p><?php echo $_SESSION['deuterium'] ?></p>
             </div>
             <div class="v_line_ressource"></div>
             <div>
                 <img src="ressources/nav/metal.png" alt="Logo métal">
-                <p>122</p>
+                <p><?php echo $_SESSION['metal'] ?></p>
             </div>
         </div>
     </nav>

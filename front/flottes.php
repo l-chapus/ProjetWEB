@@ -16,11 +16,10 @@ if (!$_SESSION) {
 </head>
 
 <body>
+    <script src="../API/js/planete_nav.js"></script>
+    
     <nav>
-        <div id="ref_planete">
-            <img src="ressources/nav/planete.png" alt="Logo de la planète">
-            G5-S8-P1
-        </div>
+        <div id="ref_planete"></div>
         <img id="logo" src="ressources/nav/logo.png" alt="Logo ESIREM Galactique">
         <h1>ESIREM Galactique</h1>
         <div id="ressource">

@@ -63,6 +63,13 @@ if (isset($_POST['email']) && isset($_POST['password']))
             $pseudo = $reponse['nom'];
 
             $_SESSION['pseudo'] = $pseudo;
+            
+            $_SESSION['ref_planete'] = "";
+    
+             // Initialise les ressources de base
+            $_SESSION['energie'] = 0;
+            $_SESSION['deuterium'] = 0;
+            $_SESSION['metal'] = 0;
         
             // Rediriger l'utilisateur vers la page d'accueil
             header("Location:../../front/galaxie.php");
