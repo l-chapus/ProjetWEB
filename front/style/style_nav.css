@@ -95,3 +95,11 @@ nav div {
       transform: rotate(-359deg);
     }
 }
+
+#ref_planete {
+    background-color: #2a2a2a;
+    position: absolute;
+    left: 225px;
+    border-radius: 10px;
+    border: 1px solid #cdedf0;
+}

@@ -17,21 +17,25 @@ if (!$_SESSION) {
 
 <body>
     <nav>
-        <img id="logo" src="ressources/logo.png" alt="Logo ESIREM Galactique">
+        <div id="ref_planete">
+            <img src="ressources/nav/planete.png" alt="Logo de la planète">
+            G5-S8-P1
+        </div>
+        <img id="logo" src="ressources/nav/logo.png" alt="Logo ESIREM Galactique">
         <h1>ESIREM Galactique</h1>
         <div id="ressource">
             <div id="energie">
-                <img src="ressources/energie.png" alt="Logo énergie">
+                <img src="ressources/nav/energie.png" alt="Logo énergie">
                 <p>13322</p>
             </div>
             <div class="v_line_ressource"></div>
             <div id="deuterium">
-                <img src="ressources/deuterium.png" alt="Logo deutérium">
+                <img src="ressources/nav/deuterium.png" alt="Logo deutérium">
                 <p>122</p>
             </div>
             <div class="v_line_ressource"></div>
             <div>
-                <img src="ressources/metal.png" alt="Logo métal">
+                <img src="ressources/nav/metal.png" alt="Logo métal">
                 <p>122</p>
             </div>
         </div>
