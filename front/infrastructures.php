@@ -100,7 +100,7 @@ if (!$_SESSION) {
                     <h3>Ressources</h3>
                     <div class="h_line_table"></div>
                     <div id="mine_metal" class="categorie">
-                        <img class="image_categorie">
+                        <img class="image_categorie" src="ressources/infrastructures/mine_de_métal.png" alt="Image de la mine de métal">
                         <div>
                             <p>Mine de métal</p>
                             <p>Niveau actuel : 0</p>
@@ -115,7 +115,7 @@ if (!$_SESSION) {
                     </div>
                     <div class="h_line_table"></div>
                     <div id="synthe_deuterium" class="categorie">
-                        <img class="image_categorie">
+                        <img class="image_categorie" src="ressources/infrastructures/synthétiseur_deutérium.png" alt="Image du synthétiseur de deutérium">
                         <div>
                             <p>Sythétiseur de deuterium</p>
                             <p>Niveau actuel : 0</p>
@@ -130,7 +130,7 @@ if (!$_SESSION) {
                     </div>
                     <div class="h_line_table"></div>
                     <div id="centrale_solaire" class="categorie">
-                        <img class="image_categorie">
+                        <img class="image_categorie" src="ressources/infrastructures/centrale_solaire.png" alt="Image de la centrale solaire">
                         <div>
                             <p>Centrale solaire</p>
                             <p>Niveau actuel : 0</p>
