@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 
 
     $planetes = $result->fetch(PDO::FETCH_ASSOC);
-    for ($i=1; $i < 10; $i++) { 
+    for ($i=1; $i < 11; $i++) { 
         $tableau .= '<div class="h_line_table"></div>';
 
         if($planetes){
@@ -95,47 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
                         </div>
                         <div class='h_line_table_distance'></div>";           
         }
-        
-        
-    }
-    if($planetes){
-        if ($planetes['idPosition'] === 10) {
-            $idUtilisateur = $planetes['idUtilisateurs'];
-                if($idUtilisateur != null){
-                    $sql = "SELECT * FROM pseudo WHERE id='$idUtilisateur'";
-                    $user = $db->query($sql);
-                    $utilisateur = $user->fetch(PDO::FETCH_ASSOC);
-                    $pseudo = $utilisateur['nom'];
-                }
-                else{
-                    $pseudo="";
-                }
-            
-            $tableau .= '<div class="h_line_table"></div>';
-            $NumImage = $planetes['NumImage'];
-            $nom = $planetes['nom'];
-            $tableau .= "<div class='divTableRow'>
-                            <div class='divTableCellDistance'>10</div>
-                            <div class='divTableCellImage'>
-                                <img src='/front/ressources/planetes/pla$NumImage.png' alt='image planete 10'>
-                            </div>
-                            <div class='divTableCell'>$nom</div>
-                            <div class='divTableCell'>$pseudo</div>
-                            <div class='divTableCell'>
-                                <img class='divTableImage' src='/front/ressources/vaisseaux_attaque.png' alt='boutton attaque planete 10'>
-                            </div>
-                        </div>";
-        }
-    }
-    else{
-        $tableau .= '<div class="h_line_table"></div>';
-        $tableau .= "<div class='divTableRow'>
-                        <div class='divTableCellDistance'>10</div>
-                        <div class='divTableCellImage'></div>
-                        <div class='divTableCell'></div>
-                        <div class='divTableCell'></div>
-                        <div class='divTableCell'></div>
-                    </div>";           
+         
     }
 
     echo $tableau;
