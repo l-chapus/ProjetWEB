@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     //l'id est simplement le numéro de l'univers + 1 parcequ'on commence à 0 
     $id_univers = $count + 1;
 
-    //on va ensuite créé les galaxie, les systèmes solaires et les planètes
+    //on va ensuite créé les galaxies, les systèmes solaires et les planètes
 
     for($i = 1; $i <= 5; $i++) {
         //ajoute la galaxie
@@ -71,8 +71,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
     }
 
-    //session_start();
-    //$_SESSION['univers'] = $nom_univers;
+    session_start();
+    $_SESSION['univers'] = $nom_univers;
 }
 
 ?>

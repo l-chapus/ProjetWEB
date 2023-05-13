@@ -70,6 +70,14 @@ if (isset($_POST['email']) && isset($_POST['password']))
             $_SESSION['energie'] = 0;
             $_SESSION['deuterium'] = 0;
             $_SESSION['metal'] = 0;
+
+            // Si on selectionne nouveau univers
+            if($univers === "nouveau_univers")
+            {
+              // On créer l'univers
+              include 'creation_univers.php';
+            }
+            
         
             // Rediriger l'utilisateur vers la page d'accueil
             header("Location:../../front/galaxie.php");

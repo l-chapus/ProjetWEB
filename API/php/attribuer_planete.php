@@ -79,6 +79,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $_SESSION['energie'] = 1000;
     $_SESSION['deuterium'] = 1000;
     $_SESSION['metal'] = 1000;
+
+    $info = "<img src='ressources/nav/planete.png' alt='Logo de la planète'>" . $ref_planete;
+    echo $info;
 }
 
 ?>

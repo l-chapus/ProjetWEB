@@ -2,8 +2,7 @@
 
 include 'pdo.php';
 
-if($_SERVER["REQUEST_METHOD"] == "GET") 
-{
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     session_start();
 
     // Récupère l'id de l'utilisateur
@@ -13,8 +12,15 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $user = $result->fetch(PDO::FETCH_ASSOC);
     $idUser = $user['id'];
 
+    // Récupère l'id de l'univers
+    $nom_univers = $_SESSION['univers'];
+    $sql = "SELECT * FROM univers WHERE nom='$nom_univers'";
+    $result = $db->query($sql);
+    $univers = $result->fetch(PDO::FETCH_ASSOC);
+    $idUnivers = $univers['id'];
+
     // Récupère l'id de la planète
-    $sql = "SELECT * FROM planete WHERE idUtilisateurs=$idUser";
+    $sql = "SELECT * FROM planete WHERE idUtilisateurs=$idUser AND idUnivers=$idUnivers";
     $result = $db->query($sql);
     $planete = $result->fetch(PDO::FETCH_ASSOC);
     $idPlanete = $planete['id'];
@@ -23,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $sql = "SELECT * FROM planete WHERE id=$idPlanete";
     $result = $db->query($sql);
     $planete = $result->fetch(PDO::FETCH_ASSOC);
-    
+
     $idsysteme_solaire = $planete['idSystemSolaire'];
     $position_planete = $planete['idPosition'];
 
@@ -43,10 +49,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $nom_Galaxie = $galaxie['nom'];
 
     $ref_planete = "G" . substr($nom_Galaxie, -1) . "-S" . substr($nom_systeme_solaire, -1) . "-P" . $position_planete;
-    
+
     $_SESSION['ref_planete'] = $ref_planete;
 
     $info = "<img src='ressources/nav/planete.png' alt='Logo de la planète'>" . $ref_planete;
-    echo $info;   
+    echo $info;
 }
-?>
