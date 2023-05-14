@@ -34,7 +34,7 @@ $deuterium = $_SESSION['deuterium'];
 
 $info = "<div id='energie'>
             <img src='ressources/nav/energie.png' alt='Logo énergie'>
-            <p>$energie</p>
+            <p id='energie_count'>$energie</p>
         </div>
         <div class='v_line_ressource'></div>
         <div id='deuterium'>

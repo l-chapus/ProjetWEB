@@ -17,6 +17,8 @@ if (!$_SESSION) {
 
 <body>
     <script src="../API/js/planete_nav.js"></script>
+    <script src="../API/js/test.js"></script>
+    <script src="../API/js/test2.js"></script>
 
     <nav>
         <div id="ref_planete"></div>

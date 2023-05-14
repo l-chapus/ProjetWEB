@@ -68,7 +68,9 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
                                 <div class='divTableCell'>$nom</div>
                                 <div class='divTableCell'>$pseudo</div>
                                 <div class='divTableCell'>
-                                    <img class='divTableImage' src='/front/ressources/vaisseaux_attaque.png' alt='boutton attaque planete $i'>
+                                    <a href='flottes.php'>
+                                        <img class='divTableImage' src='/front/ressources/vaisseaux_attaque.png' alt='boutton attaque planete $i'>
+                                    </a>
                                 </div>
                             </div>
                             <div class='h_line_table_distance'></div>";
