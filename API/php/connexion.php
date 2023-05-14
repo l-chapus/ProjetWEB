@@ -66,7 +66,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
             
             $_SESSION['ref_planete'] = "";
     
-             // Initialise les ressources de base
+            // Initialise les ressources de base
             $_SESSION['energie'] = 0;
             $_SESSION['deuterium'] = 0;
             $_SESSION['metal'] = 0;
@@ -77,8 +77,7 @@ if (isset($_POST['email']) && isset($_POST['password']))
               // On créer l'univers
               include 'creation_univers.php';
             }
-            
-        
+          
             // Rediriger l'utilisateur vers la page d'accueil
             header("Location:../../front/galaxie.php");
           }

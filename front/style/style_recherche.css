@@ -1,5 +1,8 @@
 @import url(style_nav.css);
 
+sidebar{
+    height: 1200px;
+}
 #principale {
     display: flex;
     flex-direction: column;

@@ -24,17 +24,17 @@ if (!$_SESSION) {
         <div id="ressource">
             <div id="energie">
                 <img src="ressources/nav/energie.png" alt="Logo énergie">
-                <p>13322</p>
+                <p><?php echo $_SESSION['energie'] ?></p>
             </div>
             <div class="v_line_ressource"></div>
             <div id="deuterium">
                 <img src="ressources/nav/deuterium.png" alt="Logo deutérium">
-                <p>122</p>
+                <p><?php echo $_SESSION['deuterium'] ?></p>
             </div>
             <div class="v_line_ressource"></div>
-            <div>
+            <div id="metal">
                 <img src="ressources/nav/metal.png" alt="Logo métal">
-                <p>122</p>
+                <p><?php echo $_SESSION['metal'] ?></p>
             </div>
         </div>
     </nav>

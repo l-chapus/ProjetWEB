@@ -2,7 +2,8 @@
 session_start();
 if (!$_SESSION) {
     header("Location:index.html");
-} ?>
+} 
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -34,7 +35,7 @@ if (!$_SESSION) {
                 <p><?php echo $_SESSION['deuterium'] ?></p>
             </div>
             <div class="v_line_ressource"></div>
-            <div>
+            <div id="metal">
                 <img src="ressources/nav/metal.png" alt="Logo métal">
                 <p><?php echo $_SESSION['metal'] ?></p>
             </div>
