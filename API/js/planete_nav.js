@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
     xhr2.open('GET', '../API/php/possession_planete.php', true);
     xhr2.onload = function () {
         const possession_planete = xhr2.responseText;
-        
+
         // Si l'utilisateur n'a pas de planète on lui en attribue une et on l'affiche
         if (possession_planete === "false") {
             attribuer_planete();
@@ -17,12 +17,12 @@ window.addEventListener('load', () => {
 
     };
     xhr2.send();
-    
+
 });
 
 function attribuer_planete() {
     const xhr = new XMLHttpRequest();
-    
+
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             // Met à jour le contenu de la case avec la réponse du script PHP
@@ -47,7 +47,7 @@ function attribuer_planete() {
 
 
 
-function afficher_coordonner_planete(){
+function afficher_coordonner_planete() {
     const xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {

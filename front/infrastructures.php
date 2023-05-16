@@ -17,6 +17,7 @@ if (!$_SESSION) {
 
 <body>
     <script src="../API/js/planete_nav.js"></script>
+    <script src="../API/js/construction.js"></script>
     <script src="../API/js/test.js"></script>
     <script src="../API/js/test2.js"></script>
 
@@ -59,21 +60,21 @@ if (!$_SESSION) {
                 <h3>Installations</h3>
                 <div class="h_line_table"></div>
                 <div id="labo_de_recheche" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Laboratiore de recheche</p>
                         <p>Niveau actuel : 0</p>
                         <p>Métal : 1 000</p>
                         <p>Energie : 500</p>
                     </div>
-                    <button>
+                    <button id="labo_de_recheche_boutton">
                         <div>Construire</div>
                         <div>50s</div>
                     </button>
                 </div>
                 <div class="h_line_table"></div>
                 <div id="chantier_spatial" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Chantier spatial</p>
                         <p>Niveau actuel : 0</p>
@@ -87,7 +88,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="usine_nanite" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Usine de nanites</p>
                         <p>Niveau actuel : 0</p>
@@ -105,7 +106,7 @@ if (!$_SESSION) {
                 <h3>Ressources</h3>
                 <div class="h_line_table"></div>
                 <div id="mine_metal" class="categorie">
-                    <img class="image_categorie" src="ressources/infrastructures/mine_de_métal.png" alt="Image de la mine de métal">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Mine de métal</p>
                         <p>Niveau actuel : 0</p>
@@ -120,7 +121,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="synthe_deuterium" class="categorie">
-                    <img class="image_categorie" src="ressources/infrastructures/synthétiseur_deutérium.png" alt="Image du synthétiseur de deutérium">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Sythétiseur de deuterium</p>
                         <p>Niveau actuel : 0</p>
@@ -135,7 +136,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="centrale_solaire" class="categorie">
-                    <img class="image_categorie" src="ressources/infrastructures/centrale_solaire.png" alt="Image de la centrale solaire">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Centrale solaire</p>
                         <p>Niveau actuel : 0</p>
@@ -150,7 +151,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="centrale_fusion" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Centrale à fusion</p>
                         <p>Niveau actuel : 0</p>
@@ -169,7 +170,7 @@ if (!$_SESSION) {
                 <h3>Défense</h3>
                 <div class="h_line_table"></div>
                 <div id="artillerie_laser" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Artillerie laser</p>
                         <p>Niveau actuel : 0</p>
@@ -185,7 +186,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="canon_ions" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Canon à ions</p>
                         <p>Niveau actuel : 0</p>
@@ -201,7 +202,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="bouclier" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
                         <p>Bouclier</p>
                         <p>Niveau actuel : 0</p>

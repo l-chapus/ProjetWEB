@@ -55,7 +55,7 @@ if (!$_SESSION) {
                 <h3>Recherche</h3>
                 <div class="h_line_table"></div>
                 <div id="energie" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/recherche/energie.png" alt="Logo de la recherche énergie">
                     <div>
                         <p>Energie</p>
                         <p>Niveau actuel : 0</p>
@@ -69,7 +69,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="laser" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/recherche/laser.png" alt="Logo de la recherche laser">
                     <div>
                         <p>Laser</p>
                         <p>Niveau actuel : 0</p>
@@ -84,7 +84,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="ions" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/recherche/ions.png" alt="Logo de la recherche ions">
                     <div>
                         <p>Ions</p>
                         <p>Niveau actuel : 0</p>
@@ -99,7 +99,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="bouclier" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/recherche/bouclier.png" alt="Logo de la recherche bouclier">
                     <div>
                         <p>Bouclier</p>
                         <p>Niveau actuel : 0</p>
@@ -115,7 +115,7 @@ if (!$_SESSION) {
                 </div>
                 <div class="h_line_table"></div>
                 <div id="armement" class="categorie">
-                    <img class="image_categorie">
+                    <img class="image_categorie" src="ressources/recherche/armement.png" alt="Logo de la recherche armement">
                     <div>
                         <p>Armement</p>
                         <p>Niveau actuel : 0</p>
