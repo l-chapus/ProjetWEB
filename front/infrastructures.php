@@ -62,7 +62,7 @@ if (!$_SESSION) {
                 <div id="labo_de_recheche" class="categorie">
                     <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
                     <div>
-                        <p>Laboratiore de recheche</p>
+                        <p>Laboratoire de recheche</p>
                         <p>Niveau actuel : 0</p>
                         <p>Métal : 1 000</p>
                         <p>Energie : 500</p>
@@ -81,7 +81,7 @@ if (!$_SESSION) {
                         <p>Métal : 500</p>
                         <p>Energie : 500</p>
                     </div>
-                    <button>
+                    <button id="chantier_spatial_boutton">
                         <div>Construire</div>
                         <div>50s</div>
                     </button>
@@ -95,7 +95,7 @@ if (!$_SESSION) {
                         <p>Métal : 1 000</p>
                         <p>Energie : 5 000</p>
                     </div>
-                    <button>
+                    <button id="usine_nanite_boutton">
                         <div>Construire</div>
                         <div>10 minutes</div>
                     </button>
@@ -114,7 +114,7 @@ if (!$_SESSION) {
                         <p>Energie : 10</p>
                         <p>Production : 3 / minutes</p>
                     </div>
-                    <button>
+                    <button id="mine_metal_boutton">
                         <div>Construire</div>
                         <div>10s</div>
                     </button>
@@ -129,7 +129,7 @@ if (!$_SESSION) {
                         <p>Energie : 50</p>
                         <p>Production : 1 / minutes</p>
                     </div>
-                    <button>
+                    <button id="synthe_deuterium_boutton">
                         <div>Construire</div>
                         <div>25s</div>
                     </button>
@@ -144,7 +144,7 @@ if (!$_SESSION) {
                         <p>Deuterium : 20</p>
                         <p>Production : 20</p>
                     </div>
-                    <button>
+                    <button id="centrale_solaire_boutton">
                         <div>Construire</div>
                         <div>10s</div>
                     </button>
@@ -159,7 +159,7 @@ if (!$_SESSION) {
                         <p>Deuterium : 2 000</p>
                         <p>Production : 50</p>
                     </div>
-                    <button>
+                    <button id="centrale_fusion_boutton">
                         <div>Construire</div>
                         <div>2 minutes</div>
                     </button>
@@ -179,7 +179,7 @@ if (!$_SESSION) {
                         <p>Point d'attaque : 100</p>
                         <p>Point de défense : 25</p>
                     </div>
-                    <button>
+                    <button id="artillerie_laser_boutton">
                         <div>Construire</div>
                         <div>10s</div>
                     </button>
@@ -195,7 +195,7 @@ if (!$_SESSION) {
                         <p>Point d'attaque : 250</p>
                         <p>Point de défense : 200</p>
                     </div>
-                    <button>
+                    <button id="canon_ions_boutton">
                         <div>Construire</div>
                         <div>40s</div>
                     </button>
@@ -212,7 +212,7 @@ if (!$_SESSION) {
                         <p>Point d'attaque : 0</p>
                         <p>Point de défense : 2 000</p>
                     </div>
-                    <button>
+                    <button id="bouclier_boutton">
                         <div>Construire</div>
                         <div>60s</div>
                     </button>
