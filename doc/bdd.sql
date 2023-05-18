@@ -17,6 +17,29 @@
 CREATE DATABASE IF NOT EXISTS `esirem_galactique` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
 USE `esirem_galactique`;
 
+-- Listage de la structure de la table esirem_galactique. defense
+CREATE TABLE IF NOT EXISTS `defense` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idRecherche` int(11) DEFAULT NULL,
+  `niveauRecherche` int(11) DEFAULT NULL,
+  `nom` varchar(50) NOT NULL DEFAULT '',
+  `metal` int(11) NOT NULL DEFAULT 0,
+  `energie` int(11) NOT NULL DEFAULT 0,
+  `deuterium` int(11) NOT NULL DEFAULT 0,
+  `tempsConstruction` int(11) NOT NULL,
+  `pointAttaque` int(11) NOT NULL DEFAULT 0,
+  `pointDéfense` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Listage des données de la table esirem_galactique.defense : ~3 rows (environ)
+/*!40000 ALTER TABLE `defense` DISABLE KEYS */;
+INSERT INTO `defense` (`idRecherche`, `niveauRecherche`, `nom`, `metal`, `energie`, `deuterium`, `tempsConstruction`, `pointAttaque`, `pointDéfense`) VALUES
+	(NULL, 1, 'Artillerie laser', 1500, 0, 300, 10, 100, 25),
+	(NULL, 1, 'Canon à ions', 5000, 0, 1000, 40, 250, 200),
+	(NULL, 1, 'Bouclier', 10000, 1000, 5000, 60, 0, 2000);
+/*!40000 ALTER TABLE `defense` ENABLE KEYS */;
+
 -- Listage de la structure de la table esirem_galactique. galaxie
 CREATE TABLE IF NOT EXISTS `galaxie` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -27,9 +50,73 @@ CREATE TABLE IF NOT EXISTS `galaxie` (
   CONSTRAINT `FK_galaxie_univers` FOREIGN KEY (`idUnivers`) REFERENCES `univers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.galaxie : ~0 rows (environ)
-/*!40000 ALTER TABLE `galaxie` DISABLE KEYS */;
-/*!40000 ALTER TABLE `galaxie` ENABLE KEYS */;
+
+-- Listage de la structure de la table esirem_galactique. infrastructure
+CREATE TABLE IF NOT EXISTS `infrastructure` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idPlanete` int(11) NOT NULL,
+  `idInstallations` int(11) DEFAULT NULL,
+  `idMinier` int(11) DEFAULT NULL,
+  `idDefense` int(11) DEFAULT NULL,
+  `niveau` int(11) NOT NULL DEFAULT 0,
+  `dateFin` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_infractructure_planete` (`idPlanete`),
+  KEY `FK_infractructure_installations` (`idInstallations`),
+  KEY `FK_infractructure_minier` (`idMinier`),
+  KEY `FK_infractructure_defense` (`idDefense`),
+  CONSTRAINT `FK_infractructure_defense` FOREIGN KEY (`idDefense`) REFERENCES `defense` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_infractructure_installations` FOREIGN KEY (`idInstallations`) REFERENCES `installations` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_infractructure_minier` FOREIGN KEY (`idMinier`) REFERENCES `minier` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_infractructure_planete` FOREIGN KEY (`idPlanete`) REFERENCES `planete` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Listage des données de la table esirem_galactique.infrastructure : ~0 rows (environ)
+/*!40000 ALTER TABLE `infrastructure` DISABLE KEYS */;
+/*!40000 ALTER TABLE `infrastructure` ENABLE KEYS */;
+
+-- Listage de la structure de la table esirem_galactique. installations
+CREATE TABLE IF NOT EXISTS `installations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idRecherche` int(11) DEFAULT NULL,
+  `niveauRecherche` int(11) DEFAULT NULL,
+  `nom` varchar(50) DEFAULT NULL,
+  `metal` int(11) DEFAULT NULL,
+  `energie` int(11) DEFAULT NULL,
+  `tempsConstruction` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Listage des données de la table esirem_galactique.installations : ~3 rows (environ)
+/*!40000 ALTER TABLE `installations` DISABLE KEYS */;
+INSERT INTO `installations` (`idRecherche`, `niveauRecherche`, `nom`, `metal`, `energie`, `tempsConstruction`) VALUES
+	(NULL, NULL, 'Laboratoire de recherche', 1000, 500, 50),
+	(NULL, NULL, 'Chantier spatial', 500, 500, 50),
+	(NULL, 5, 'Usine de nanites', 10000, 5000, 600);
+/*!40000 ALTER TABLE `installations` ENABLE KEYS */;
+
+-- Listage de la structure de la table esirem_galactique. minier
+CREATE TABLE IF NOT EXISTS `minier` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idRecherche` int(11) DEFAULT NULL,
+  `niveauRecherche` int(11) DEFAULT NULL,
+  `nom` varchar(50) NOT NULL,
+  `metal` int(11) NOT NULL DEFAULT 0,
+  `energie` int(11) NOT NULL DEFAULT 0,
+  `deuterium` int(11) NOT NULL DEFAULT 0,
+  `tempsConstruction` int(11) NOT NULL,
+  `production` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Listage des données de la table esirem_galactique.minier : ~4 rows (environ)
+/*!40000 ALTER TABLE `minier` DISABLE KEYS */;
+INSERT INTO `minier` (`idRecherche`, `niveauRecherche`, `nom`, `metal`, `energie`, `deuterium`, `tempsConstruction`, `production`) VALUES
+	(NULL, NULL, 'Mine de métal', 100, 10, 0, 10, 3),
+	(NULL, NULL, 'Synthétiseur de deutérium', 200, 50, 0, 25, 1),
+	(NULL, NULL, 'Centrale solaire', 150, 0, 20, 10, 20),
+	(NULL, 10, 'Centrale à fusion', 5000, 0, 2000, 120, 50);
+/*!40000 ALTER TABLE `minier` ENABLE KEYS */;
 
 -- Listage de la structure de la table esirem_galactique. planete
 CREATE TABLE IF NOT EXISTS `planete` (
@@ -51,9 +138,7 @@ CREATE TABLE IF NOT EXISTS `planete` (
   CONSTRAINT `FK_planete_utilisateurs` FOREIGN KEY (`idUtilisateurs`) REFERENCES `utilisateurs` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.planete : ~0 rows (environ)
-/*!40000 ALTER TABLE `planete` DISABLE KEYS */;
-/*!40000 ALTER TABLE `planete` ENABLE KEYS */;
+
 
 -- Listage de la structure de la table esirem_galactique. posistion
 CREATE TABLE IF NOT EXISTS `posistion` (
@@ -63,7 +148,7 @@ CREATE TABLE IF NOT EXISTS `posistion` (
   `bonusMetal` int(11) DEFAULT NULL,
   `bonusDeuterium` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Listage des données de la table esirem_galactique.posistion : ~10 rows (environ)
 /*!40000 ALTER TABLE `posistion` DISABLE KEYS */;
@@ -85,9 +170,9 @@ CREATE TABLE IF NOT EXISTS `pseudo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.pseudo : ~200 rows (environ)
+-- Listage des données de la table esirem_galactique.pseudo : ~197 rows (environ)
 /*!40000 ALTER TABLE `pseudo` DISABLE KEYS */;
 INSERT INTO `pseudo` (`nom`) VALUES
 	('Nova Frost'),
@@ -328,10 +413,6 @@ CREATE TABLE IF NOT EXISTS `ressources` (
   CONSTRAINT `FK_ressource_utilisateur` FOREIGN KEY (`idUtilisateurs`) REFERENCES `utilisateurs` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.ressources : ~0 rows (environ)
-/*!40000 ALTER TABLE `ressources` DISABLE KEYS */;
-/*!40000 ALTER TABLE `ressources` ENABLE KEYS */;
-
 -- Listage de la structure de la table esirem_galactique. systemsolaire
 CREATE TABLE IF NOT EXISTS `systemsolaire` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -342,9 +423,6 @@ CREATE TABLE IF NOT EXISTS `systemsolaire` (
   CONSTRAINT `FK_systemesolaire_galaxie` FOREIGN KEY (`idGalaxie`) REFERENCES `galaxie` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.systemsolaire : ~0 rows (environ)
-/*!40000 ALTER TABLE `systemsolaire` DISABLE KEYS */;
-/*!40000 ALTER TABLE `systemsolaire` ENABLE KEYS */;
 
 -- Listage de la structure de la table esirem_galactique. univers
 CREATE TABLE IF NOT EXISTS `univers` (
@@ -353,9 +431,6 @@ CREATE TABLE IF NOT EXISTS `univers` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.univers : ~0 rows (environ)
-/*!40000 ALTER TABLE `univers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `univers` ENABLE KEYS */;
 
 -- Listage de la structure de la table esirem_galactique. utilisateurs
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
@@ -363,13 +438,5 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `email` text NOT NULL,
   `password` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Listage des données de la table esirem_galactique.utilisateurs : ~0 rows (environ)
-/*!40000 ALTER TABLE `utilisateurs` DISABLE KEYS */;
-/*!40000 ALTER TABLE `utilisateurs` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
