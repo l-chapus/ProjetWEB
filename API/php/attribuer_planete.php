@@ -29,27 +29,27 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $idDernierePlanete = $planete['id'] + $numRows - 1;
     
 
-    $ipPlaneteAAttribuer = rand($planete['id'] , $idDernierePlanete);
+    $idPlaneteAAttribuer = rand($planete['id'] , $idDernierePlanete);
 
-    $sql = "SELECT * FROM planete WHERE id=$ipPlaneteAAttribuer";
+    $sql = "SELECT * FROM planete WHERE id=$idPlaneteAAttribuer";
     $result = $db->query($sql);
     $planete_attribuer = $result->fetch(PDO::FETCH_ASSOC);
 
     // Vérifie que la planète n'est pas déjà attribuer
     while($planete_attribuer['idUtilisateurs'] != null)
     {
-        $ipPlaneteAAttribuer = rand($planete['id'] , $idDernierePlanete);
-        $sql = "SELECT * FROM planete WHERE id=$ipPlaneteAAttribuer";
+        $idPlaneteAAttribuer = rand($planete['id'] , $idDernierePlanete);
+        $sql = "SELECT * FROM planete WHERE id=$idPlaneteAAttribuer";
         $result = $db->query($sql);
         $planete_attribuer = $result->fetch(PDO::FETCH_ASSOC);
     }
 
     $stmt = $db->prepare("UPDATE planete SET idUtilisateurs = ? WHERE id = ?");
-    $stmt->execute([$idUser, $ipPlaneteAAttribuer]);
+    $stmt->execute([$idUser, $idPlaneteAAttribuer]);
 
 
     // Récupère l'id du système solaire
-    $sql = "SELECT * FROM planete WHERE id=$ipPlaneteAAttribuer";
+    $sql = "SELECT * FROM planete WHERE id=$idPlaneteAAttribuer";
     $result = $db->query($sql);
     $planete = $result->fetch(PDO::FETCH_ASSOC);
     
@@ -79,6 +79,36 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $_SESSION['energie'] = 1000;
     $_SESSION['deuterium'] = 1000;
     $_SESSION['metal'] = 1000;
+
+
+    // initialise les infrastuctures dans la base de données avec un niveau égale à 0 et sans date de fin
+    // pour les installation
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idInstallations) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 1]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idInstallations) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 2]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idInstallations) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 3]);
+    
+    // pour la partie génération de ressource
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idMinier) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 1]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idMinier) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 2]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idMinier) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 3]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idMinier) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 4]);
+
+    // pour la partie défense
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idDefense) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 1]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idDefense) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 2]);
+    $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idDefense) VALUES (?,?);");
+    $infra->execute([$idPlaneteAAttribuer, 3]);
+
+
 
     $info = "<img src='ressources/nav/planete.png' alt='Logo de la planète'>" . $ref_planete;
     echo $info;

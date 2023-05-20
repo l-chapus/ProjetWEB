@@ -17,7 +17,8 @@ if (!$_SESSION) {
 
 <body>
     <script src="../API/js/planete_nav.js"></script>
-    <script src="../API/js/construction.js"></script>
+    <script src="../API/js/affichage_infractructure.js"></script>
+    <script src='../API/js/construction.js'></script>
     <script src="../API/js/test.js"></script>
     <script src="../API/js/test2.js"></script>
 

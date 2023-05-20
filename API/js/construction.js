@@ -1,8 +1,8 @@
-window.addEventListener('load', () => {
-    
+function ajout_event_listenner_infrastructure(){
+
     // Récupérer le bouton du laboratoire
-    const labo_de_recheche_boutton = document.getElementById("labo_de_recheche_boutton");
-    labo_de_recheche_boutton.addEventListener("click", function () {
+    const laboratoire_recheche_boutton = document.getElementById("laboratoire_recheche_boutton");
+    laboratoire_recheche_boutton.addEventListener("click", function () {
         console.log("test");
     });
 
@@ -59,4 +59,5 @@ window.addEventListener('load', () => {
     bouclier_boutton.addEventListener("click", function () {
         console.log("test3");
     });
-});
+}
+//);
