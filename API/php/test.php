@@ -4,4 +4,4 @@ include 'pdo.php';
 
 session_start();
 
-echo $_SESSION['energie'];
+echo $_SESSION['metal'];

@@ -39,12 +39,12 @@ $info = "<div id='energie'>
         <div class='v_line_ressource'></div>
         <div id='deuterium'>
             <img src='ressources/nav/deuterium.png' alt='Logo deutérium'>
-            <p>$deuterium</p>
+            <p id='deuterium_count'>$deuterium</p>
         </div>
         <div class='v_line_ressource'></div>
         <div id='metal'>
             <img src='ressources/nav/metal.png' alt='Logo métal'>
-            <p>$metal</p>
+            <p id='metal_count'>$metal</p>
         </div>";
 
 echo $info;

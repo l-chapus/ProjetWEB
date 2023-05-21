@@ -17,5 +17,5 @@ function afficher_infra() {
     //attend que la page est fini de se générer
     setTimeout(function() {
         ajout_event_listenner_infrastructure();
-    }, 500);
+    }, 300);
 }

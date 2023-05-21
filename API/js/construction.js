@@ -1,9 +1,23 @@
-function ajout_event_listenner_infrastructure(){
+function ajout_event_listenner_infrastructure() {
 
     // Récupérer le bouton du laboratoire
     const laboratoire_recheche_boutton = document.getElementById("laboratoire_recheche_boutton");
     laboratoire_recheche_boutton.addEventListener("click", function () {
-        console.log("test");
+        if (laboratoire_recheche_boutton.className != "en_construction") {
+            if (nombre_batiment()) {
+                const laboratoire_recheche_metal = document.getElementById("laboratoire_recheche_metal");
+                const laboratoire_recheche_energie = document.getElementById("laboratoire_recheche_energie");
+                cout_metal = parseInt(laboratoire_recheche_metal.innerHTML.substring(8));
+                cout_energie = parseInt(laboratoire_recheche_energie.innerHTML.substring(10));
+
+                console.log(cout_metal);
+                console.log(cout_energie);
+                
+                //laboratoire_recheche_boutton.classList.add("en_construction");
+                //console.log(laboratoire_recheche_boutton.className);
+            }
+
+        }
     });
 
     // Récupérer le bouton du Chantier spatial
@@ -60,4 +74,27 @@ function ajout_event_listenner_infrastructure(){
         console.log("test3");
     });
 }
-//);
+
+// renvoie true si on est en dessous de la limite et false si on est à la limite
+function nombre_batiment() {
+    return new Promise(function (resolve, reject) {
+        const xmr = new XMLHttpRequest();
+
+        xmr.onreadystatechange = function () {
+            if (xmr.readyState === 4) {
+                if (xmr.status === 200) {
+                    if (xmr.responseText === "dessous") {
+                        resolve(true);
+                    } else {
+                        resolve(false);
+                    }
+                } else {
+                    reject(new Error("Une erreur s'est produite lors de la requête."));
+                }
+            }
+        };
+
+        xmr.open("GET", "../API/php/nombre_batiment.php", true);
+        xmr.send();
+    });
+}

@@ -58,3 +58,19 @@ section div button:hover {
     left: 25px;
     background-color: #FEB201;  
 }
+.en_construction {
+    color: #000202;
+    background-color: #ec3434;
+    border: 1px solid #5c0101;
+}
+.en_construction:hover {
+    color: #000202;
+    background-color: #ec3434;
+    border: 1px solid #5c0101;
+}
+
+.libre {
+    color: #dff5f7;
+    background-color: #3b556d;
+    border: 1px solid #000;
+}

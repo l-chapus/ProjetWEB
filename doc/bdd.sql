@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `planete` (
 
 
 -- Listage de la structure de la table esirem_galactique. posistion
-CREATE TABLE IF NOT EXISTS `posistion` (
+CREATE TABLE IF NOT EXISTS `position` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `taille` int(11) DEFAULT NULL,
   `bonusSolaire` int(11) DEFAULT NULL,
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `posistion` (
 
 -- Listage des données de la table esirem_galactique.posistion : ~10 rows (environ)
 /*!40000 ALTER TABLE `posistion` DISABLE KEYS */;
-INSERT INTO `posistion` (`taille`, `bonusSolaire`, `bonusMetal`, `bonusDeuterium`) VALUES
+INSERT INTO `position` (`taille`, `bonusSolaire`, `bonusMetal`, `bonusDeuterium`) VALUES
 	(90, 30, 0, -15),
 	(100, 20, 5, -10),
 	(110, 10, 10, -5),

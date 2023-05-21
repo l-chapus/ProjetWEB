@@ -224,13 +224,15 @@ function installation_info($id, $niveau)
     $sql = "SELECT * FROM installations WHERE id=$id";
     $result = $db->query($sql);
     $infra = $result->fetch(PDO::FETCH_ASSOC);
+    $metal_id = $infra['nom'] . "_metal";
+    $energie_id = $infra['nom'] . "_energie";
 
     // calcul et arrondi au plus proche les valeurs
     $metal = round($infra['metal'] * pow(1.6, $niveau));
     $energie = round($infra['energie'] * pow(1.6, $niveau));
 
-    $info .= "<p>Métal : $metal</p>";
-    $info .= "<p>Energie : $energie</p></div>";
+    $info .= "<p id='$metal_id'>Métal : $metal</p>";
+    $info .= "<p id='$energie_id'>Energie : $energie</p></div>";
 
     return $info;
 }
