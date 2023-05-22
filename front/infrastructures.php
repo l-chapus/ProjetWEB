@@ -19,7 +19,7 @@ if (!$_SESSION) {
     <script src="../API/js/planete_nav.js"></script>
     <script src="../API/js/affichage_infractructure.js"></script>
     <script src='../API/js/construction.js'></script>
-    <script src="../API/js/test.js"></script>
+    <script src="../API/js/ressource_manager.js"></script>
     <script src="../API/js/test2.js"></script>
 
     <nav>
@@ -29,17 +29,17 @@ if (!$_SESSION) {
         <div id="ressource">
             <div id="energie">
                 <img src="ressources/nav/energie.png" alt="Logo énergie">
-                <p><?php echo $_SESSION['energie'] ?></p>
+                <p id='energie_count'></p>
             </div>
             <div class="v_line_ressource"></div>
             <div id="deuterium">
                 <img src="ressources/nav/deuterium.png" alt="Logo deutérium">
-                <p><?php echo $_SESSION['deuterium'] ?></p>
+                <p id='deuterium_count'></p>
             </div>
             <div class="v_line_ressource"></div>
             <div id="metal">
                 <img src="ressources/nav/metal.png" alt="Logo métal">
-                <p><?php echo $_SESSION['metal'] ?></p>
+                <p id='metal_count'></p>
             </div>
         </div>
     </nav>
