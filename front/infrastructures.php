@@ -17,10 +17,12 @@ if (!$_SESSION) {
 
 <body>
     <script src="../API/js/planete_nav.js"></script>
+    <script src="../API/js/bouton_sidebar.js"></script>
+    <script src="../API/js/ressource_manager.js"></script>
+    
     <script src="../API/js/affichage_infractructure.js"></script>
     <script src='../API/js/construction.js'></script>
-    <script src="../API/js/ressource_manager.js"></script>
-    <script src="../API/js/test2.js"></script>
+    
 
     <nav>
         <div id="ref_planete"></div>
@@ -48,11 +50,11 @@ if (!$_SESSION) {
             <div id="pseudo">
                 <?php echo $_SESSION['pseudo'] ?>
             </div>
-            <button onclick="window.location.href = 'galaxie.php';">Galaxie</button>
-            <button>Infrastructure</button>
-            <button onclick="window.location.href = 'recherche.php';">Recherche</button>
-            <button onclick="window.location.href = 'chantier_spatial.php';">Chantier spatial</button>
-            <button onclick="window.location.href = 'flottes.php';">Flottes</button>
+            <button id="galaxie_sidebar_bouton">Galaxie</button>
+            <button id="infrastructure_sidebar_bouton">Infrastructure</button>
+            <button id="recherche_sidebar_bouton">Recherche</button>
+            <button id="chatier_spatial_sidebar_bouton">Chantier spatial</button>
+            <button id="flottes_sidebar_bouton">Flottes</button>
         </sidebar>
 
         <div id="principale">

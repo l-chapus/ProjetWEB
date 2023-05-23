@@ -9,9 +9,12 @@ function ajout_event_listenner_infrastructure() {
                 const laboratoire_recheche_energie = document.getElementById("laboratoire_recheche_energie");
                 cout_metal = parseInt(laboratoire_recheche_metal.innerHTML.substring(8));
                 cout_energie = parseInt(laboratoire_recheche_energie.innerHTML.substring(10));
-
+                if(cout_metal < quantite_metal && cout_energie < quantite_energie_total){
+                    console.log("oui");
+                    
+                }
                 console.log(cout_metal);
-                console.log(cout_energie);
+                console.log(quantite_energie);
                 
                 //laboratoire_recheche_boutton.classList.add("en_construction");
                 //console.log(laboratoire_recheche_boutton.className);

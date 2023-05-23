@@ -24,33 +24,47 @@ $result = $db->query($sql);
 $planete = $result->fetch(PDO::FETCH_ASSOC);
 $idPlanete = $planete['id'];
 
-// Récupère les ressources stocké dans la base de données
-$sql = "SELECT * FROM ressources WHERE idUtilisateurs=$idUser AND idUnivers=$idUnivers";
-$result = $db->query($sql);
-$ressources = $result->fetch(PDO::FETCH_ASSOC);
 
-// Récupère les informations sur les niveau des batiments
-$sql = "SELECT * FROM infrastructure WHERE idPlanete=$idPlanete AND idMinier IS NOT NULL";
-$result = $db->query($sql);
-$infra = $result->fetch(PDO::FETCH_ASSOC);
-$niveau_mine = $infra['niveau'];
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
-$infra = $result->fetch(PDO::FETCH_ASSOC);
-$niveau_synthetiseur = $infra['niveau'];
+    // Récupère les ressources stocké dans la base de données
+    $sql = "SELECT * FROM ressources WHERE idUtilisateurs=$idUser AND idUnivers=$idUnivers";
+    $result = $db->query($sql);
+    $ressources = $result->fetch(PDO::FETCH_ASSOC);
 
-$infra = $result->fetch(PDO::FETCH_ASSOC);
-$niveau_centrale_solaire = $infra['niveau'];
+    // Récupère les informations sur les niveau des batiments
+    $sql = "SELECT * FROM infrastructure WHERE idPlanete=$idPlanete AND idMinier IS NOT NULL";
+    $result = $db->query($sql);
+    $infra = $result->fetch(PDO::FETCH_ASSOC);
+    $niveau_mine = $infra['niveau'];
 
-$infra = $result->fetch(PDO::FETCH_ASSOC);
-$niveau_centrale_fusion = $infra['niveau'];
+    $infra = $result->fetch(PDO::FETCH_ASSOC);
+    $niveau_synthetiseur = $infra['niveau'];
 
+    $infra = $result->fetch(PDO::FETCH_ASSOC);
+    $niveau_centrale_solaire = $infra['niveau'];
 
-$metal = $ressources['metal'];
-$energie = $ressources['energie'];
-$deuterium = $ressources['deuterium'];
+    $infra = $result->fetch(PDO::FETCH_ASSOC);
+    $niveau_centrale_fusion = $infra['niveau'];
 
 
-// on sépare chaque valeur pour pouvoir les retrouvées dans le javascript
-$info = $metal . '|' . $niveau_mine  . '|' . $deuterium . '|' . $niveau_synthetiseur . '|' . $energie . '|' . $niveau_centrale_solaire . '|' . $niveau_centrale_fusion;
+    $metal = $ressources['metal'];
+    $energie = $ressources['energie'];
+    $deuterium = $ressources['deuterium'];
 
-echo $info;
+
+    // on sépare chaque valeur pour pouvoir les retrouvées dans le javascript
+    $info = $metal . '|' . $niveau_mine  . '|' . $deuterium . '|' . $niveau_synthetiseur . '|' . $energie . '|' . $niveau_centrale_solaire . '|' . $niveau_centrale_fusion;
+
+    echo $info;
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    $metal = $_POST['metal'];
+    $energie = $_POST['energie'];;
+    $deuterium = $_POST['deuterium'];
+
+    $stmt = $db->prepare("UPDATE ressources SET metal = $metal, deuterium = $deuterium, energie = $energie WHERE idUtilisateurs = ? AND idUnivers = ?");
+    $stmt->execute([$idUser,$idUnivers]);
+}
