@@ -1,5 +1,10 @@
 window.addEventListener('load', () => {
     ressource_update();
+    
+    // intervalle de 1 minutes, on synchronise les ressources toutes les minutes
+    setInterval(function () {
+        envoyer_ressource();
+    }, 60000);
 });
 
 function ressource_update() {

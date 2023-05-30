@@ -30,8 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $result = $db->query($sql);
     $infra = $result->fetch(PDO::FETCH_ASSOC);
 
+    // NIVEAU DES RECHERCHES
     // A DEFINIR DYNAMIQUEMENT
     $niveau_intelligeance_artificelle = 5;
+    $niveau_laser = 0;
+    $niveau_ions = 0;
+    $niveau_bouclier = 0;
 
 
     $textHTML = "";
@@ -98,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div>
                     <p>Sythétiseur de deuterium</p>";
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
+    $textHTML .= "<p id='synthe_deuterium_niveau' >Niveau actuel : $niveau</p>";
 
     $id = $infra['idMinier'];
     $sql = "SELECT * FROM minier WHERE id=$id";
@@ -109,8 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $energie = round($minier['energie'] * pow(1.6, $niveau));
     $production = round($minier['production'] * pow(1.3, $niveau));
 
-    $textHTML .= "<p>Métal : $metal</p>";
-    $textHTML .= "<p>Energie : $energie</p>";
+    $textHTML .= "<p id='synthe_deuterium_metal'>Métal : $metal</p>";
+    $textHTML .= "<p id='synthe_deuterium_energie'>Energie : $energie</p>";
     $textHTML .= "<p>Production : $production / minutes</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
@@ -121,9 +125,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $textHTML .= "<div id='centrale_solaire' class='categorie'>
                     <img class='image_categorie' src='ressources/infrastructures/marteau.png' alt='Image de marteau'>
                     <div>
-                    <p>Centrale solaire</p>";
+                    <p >Centrale solaire</p>";
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
+    $textHTML .= "<p id='centrale_solaire_niveau'>Niveau actuel : $niveau</p>";
 
     $id = $infra['idMinier'];
     $sql = "SELECT * FROM minier WHERE id=$id";
@@ -134,8 +138,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $deuterium = round($minier['deuterium'] * pow(1.6, $niveau));
     $production = round($minier['production'] * pow(1.4, $niveau));
 
-    $textHTML .= "<p>Métal : $metal</p>";
-    $textHTML .= "<p>Deutérium : $deuterium</p>";
+    $textHTML .= "<p id='centrale_solaire_metal' >Métal : $metal</p>";
+    $textHTML .= "<p id='centrale_solaire_deuterium' >Deutérium : $deuterium</p>";
     $textHTML .= "<p>Production : $production</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
@@ -148,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div>
                     <p>Centrale à fusion</p>";
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
+    $textHTML .= "<p id='centrale_fusion_niveau'>Niveau actuel : $niveau</p>";
 
     $id = $infra['idMinier'];
     $sql = "SELECT * FROM minier WHERE id=$id";
@@ -159,8 +163,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $deuterium = round($minier['deuterium'] * pow(1.6, $niveau));
     $production = round($minier['production'] * pow(2, $niveau));
 
-    $textHTML .= "<p>Métal : $metal</p>";
-    $textHTML .= "<p>Deutérium : $deuterium</p>";
+    $textHTML .= "<p id='centrale_fusion_metal' >Métal : $metal</p>";
+    $textHTML .= "<p id='centrale_fusion_deuterium' >Deutérium : $deuterium</p>";
     $textHTML .= "<p>Production : $production</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
@@ -175,10 +179,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <img class='image_categorie' src='ressources/infrastructures/marteau.png' alt='Image de marteau'>
                     <div>
                     <p>Artillerie laser</p>";
+    
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
-    $textHTML .= "<p>Métal : test</p>";
-    $textHTML .= "<p>Métal : test</p></div>";
+    $textHTML .= "<p id='artillerie_laser_niveau'>Niveau actuel : $niveau</p>";
+    
+    $id = $infra['idDefense'];
+    $sql = "SELECT * FROM defense WHERE id=$id";
+    $result_defense = $db->query($sql);
+    $defense = $result_defense->fetch(PDO::FETCH_ASSOC);
+
+    $metal = round($defense['metal'] * pow(1.6, $niveau));
+    $deuterium = round($defense['deuterium'] * pow(1.6, $niveau));
+    $pt_attaque = round($defense['pointAttaque'] * pow(1.05, $niveau_laser + $niveau_ions));
+    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier));
+
+    $textHTML .= "<p id='artillerie_laser_metal'>Métal : $metal</p>";
+    $textHTML .= "<p id='artillerie_laser_deuterium'>Deutérium : $deuterium</p>";
+    $textHTML .= "<p>Point d'attaque : $pt_attaque</p>";
+    $textHTML .= "<p>Point de défense: $pt_defense</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
 
@@ -190,9 +208,22 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div>
                     <p>Canon à ions</p>";
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
-    $textHTML .= "<p>Métal : test</p>";
-    $textHTML .= "<p>Métal : test</p></div>";
+    $textHTML .= "<p id='canon_ions_niveau' >Niveau actuel : $niveau</p>";
+
+    $id = $infra['idDefense'];
+    $sql = "SELECT * FROM defense WHERE id=$id";
+    $result_defense = $db->query($sql);
+    $defense = $result_defense->fetch(PDO::FETCH_ASSOC);
+
+    $metal = round($defense['metal'] * pow(1.6, $niveau));
+    $deuterium = round($defense['deuterium'] * pow(1.6, $niveau));
+    $pt_attaque = round($defense['pointAttaque'] * pow(1.05, $niveau_laser + $niveau_ions));
+    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier));
+
+    $textHTML .= "<p id='canon_ions_metal'>Métal : $metal</p>";
+    $textHTML .= "<p id='canon_ions_deuterium'>Deutérium : $deuterium</p>";
+    $textHTML .= "<p>Point d'attaque : $pt_attaque</p>";
+    $textHTML .= "<p>Point de défense: $pt_defense</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
 
@@ -204,9 +235,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div>
                     <p>Bouclier</p>";
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
-    $textHTML .= "<p>Métal : test</p>";
-    $textHTML .= "<p>Métal : test</p></div>";
+    $textHTML .= "<p id='bouclier_niveau'>Niveau actuel : $niveau</p>";
+
+    $id = $infra['idDefense'];
+    $sql = "SELECT * FROM defense WHERE id=$id";
+    $result_defense = $db->query($sql);
+    $defense = $result_defense->fetch(PDO::FETCH_ASSOC);
+
+    $metal = round($defense['metal'] * pow(1.5, $niveau));
+    $energie = round($defense['energie'] * pow(1.5, $niveau));
+    $deuterium = round($defense['deuterium'] * pow(1.5, $niveau));
+    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier));
+    $textHTML .= "<p id='bouclier_metal'>Métal : $metal</p>";
+    $textHTML .= "<p id='bouclier_energie'>Energie : $energie</p>";
+    $textHTML .= "<p id='bouclier_deuterium'>Deutérium : $deuterium</p>";
+    $textHTML .= "<p>Point de défense: $pt_defense</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
     $textHTML .= "</section>";

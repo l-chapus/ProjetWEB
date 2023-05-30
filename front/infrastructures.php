@@ -59,58 +59,6 @@ if (!$_SESSION) {
 
         <div id="principale">
 
-            <section id="defense">
-                <h3>Défense</h3>
-                <div class="h_line_table"></div>
-                <div id="artillerie_laser" class="categorie">
-                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
-                    <div>
-                        <p>Artillerie laser</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Métal : 150</p>
-                        <p>Deuterium : 20</p>
-                        <p>Point d'attaque : 100</p>
-                        <p>Point de défense : 25</p>
-                    </div>
-                    <button id="artillerie_laser_boutton">
-                        <div>Construire</div>
-                        <div>10s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="canon_ions" class="categorie">
-                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
-                    <div>
-                        <p>Canon à ions</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Métal : 5 000</p>
-                        <p>Deuterium : 1 000</p>
-                        <p>Point d'attaque : 250</p>
-                        <p>Point de défense : 200</p>
-                    </div>
-                    <button id="canon_ions_boutton">
-                        <div>Construire</div>
-                        <div>40s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="bouclier" class="categorie">
-                    <img class="image_categorie" src="ressources/infrastructures/marteau.png" alt="Image de marteau">
-                    <div>
-                        <p>Bouclier</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Métal : 10 000</p>
-                        <p>Deuterium : 5 000</p>
-                        <p>Energie : 1 000</p>
-                        <p>Point d'attaque : 0</p>
-                        <p>Point de défense : 2 000</p>
-                    </div>
-                    <button id="bouclier_boutton">
-                        <div>Construire</div>
-                        <div>60s</div>
-                    </button>
-                </div>
-            </section>
         </div>
     </div>
 </body>

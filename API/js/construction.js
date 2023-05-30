@@ -17,7 +17,7 @@ function ajout_event_listenner_infrastructure() {
                 niveau = parseInt(laboratoire_recheche_niveau.innerHTML.substring(16)) + 1;
                 temps = parseInt(laboratoire_recheche_temps.innerHTML);
 
-                if (cout_metal < quantite_metal && quantite_energie < quantite_energie_total) {
+                if (cout_metal < quantite_metal && cout_energie < quantite_energie_total) {
                     quantite_metal -= cout_metal;
                     quantite_energie -= cout_energie;
                     augmenter_niveau_date_fin(1, niveau, temps);
@@ -25,8 +25,7 @@ function ajout_event_listenner_infrastructure() {
                     //change la classe
                     ajouter_classe_en_construction("en_construction");
                     envoyer_ressource();
-                    
-                    //location.reload();
+                    construction_batiment();
                 }
             }
         }
@@ -44,19 +43,18 @@ function ajout_event_listenner_infrastructure() {
 
                 cout_metal = parseInt(chantier_spatial_metal.innerHTML.substring(8));
                 cout_energie = parseInt(chantier_spatial_energie.innerHTML.substring(10));
-                niveau = parseInt(chantier_spatial_niveau.innerHTML.substring(16)) + 1;
+                niveau = parseInt(chantier_spatial_niveau.innerHTML.substring(16));
                 temps = parseInt(chantier_spatial_temps.innerHTML);
 
-                if (cout_metal < quantite_metal && quantite_energie < quantite_energie_total) {
+                if (cout_metal < quantite_metal && cout_energie < quantite_energie_total) {
                     quantite_metal -= cout_metal;
                     quantite_energie -= cout_energie;
-                    augmenter_niveau_date_fin(2, niveau, temps);
+                    augmenter_niveau_date_fin(2, niveau + 1 , temps);
 
                     //change la classe
                     ajouter_classe_en_construction("en_construction");
                     envoyer_ressource();
-                    
-                    //location.reload();
+                    construction_batiment();
                 }
             }
         }
@@ -67,8 +65,26 @@ function ajout_event_listenner_infrastructure() {
     usine_nanite_boutton.addEventListener("click", function () {
         if (usine_nanite_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const usine_nanite_metal = document.getElementById("usine_nanite_metal");
+                const usine_nanite_energie = document.getElementById("usine_nanite_energie");
+                const usine_nanite_niveau = document.getElementById("usine_nanite_niveau");
+                const usine_nanite_temps = document.getElementById("usine_nanite_temps");
+
+                cout_metal = parseInt(usine_nanite_metal.innerHTML.substring(8));
+                cout_energie = parseInt(usine_nanite_energie.innerHTML.substring(10));
+                niveau = parseInt(usine_nanite_niveau.innerHTML.substring(16));
+                temps = parseInt(usine_nanite_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_energie < quantite_energie_total) {
+                    quantite_metal -= cout_metal;
+                    quantite_energie -= cout_energie;
+                    augmenter_niveau_date_fin(3, niveau +1, temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -85,19 +101,18 @@ function ajout_event_listenner_infrastructure() {
 
                 cout_metal = parseInt(mine_metal_metal.innerHTML.substring(8));
                 cout_energie = parseInt(mine_metal_energie.innerHTML.substring(10));
-                niveau = parseInt(mine_metal_niveau.innerHTML.substring(16)) + 1;
+                niveau = parseInt(mine_metal_niveau.innerHTML.substring(16));
                 temps = parseInt(mine_metal_temps.innerHTML);
 
-                if (cout_metal < quantite_metal && quantite_energie < quantite_energie_total) {
+                if (cout_metal < quantite_metal && cout_energie < quantite_energie_total) {
                     quantite_metal -= cout_metal;
                     quantite_energie -= cout_energie;
-                    augmenter_niveau_date_fin(4, niveau, temps);
+                    augmenter_niveau_date_fin(4, niveau +1, temps);
 
                     //change la classe
                     ajouter_classe_en_construction("en_construction");
                     envoyer_ressource();
-                    
-                    //location.reload();
+                    construction_batiment();
                 }
             }
         }
@@ -108,8 +123,26 @@ function ajout_event_listenner_infrastructure() {
     synthe_deuterium_boutton.addEventListener("click", function () {
         if (synthe_deuterium_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const synthe_deuterium_metal = document.getElementById("synthe_deuterium_metal");
+                const synthe_deuterium_energie = document.getElementById("synthe_deuterium_energie");
+                const synthe_deuterium_niveau = document.getElementById("synthe_deuterium_niveau");
+                const synthe_deuterium_temps = document.getElementById("synthe_deuterium_temps");
+
+                cout_metal = parseInt(synthe_deuterium_metal.innerHTML.substring(8));
+                cout_energie = parseInt(synthe_deuterium_energie.innerHTML.substring(10));
+                niveau = parseInt(synthe_deuterium_niveau.innerHTML.substring(16));
+                temps = parseInt(synthe_deuterium_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_energie < quantite_energie_total) {
+                    quantite_metal -= cout_metal;
+                    quantite_energie -= cout_energie;
+                    augmenter_niveau_date_fin(5, niveau + 1, temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -119,8 +152,26 @@ function ajout_event_listenner_infrastructure() {
     centrale_solaire_boutton.addEventListener("click", function () {
         if (centrale_solaire_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const centrale_solaire_metal = document.getElementById("centrale_solaire_metal");
+                const centrale_solaire_deuterium = document.getElementById("centrale_solaire_deuterium");
+                const centrale_solaire_niveau = document.getElementById("centrale_solaire_niveau");
+                const centrale_solaire_temps = document.getElementById("centrale_solaire_temps");
+
+                cout_metal = parseInt(centrale_solaire_metal.innerHTML.substring(8));
+                cout_deuterium = parseInt(centrale_solaire_deuterium.innerHTML.substring(12));
+                niveau = parseInt(centrale_solaire_niveau.innerHTML.substring(16));
+                temps = parseInt(centrale_solaire_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_deuterium < quantite_deuterium) {
+                    quantite_metal -= cout_metal;
+                    quantite_deuterium -= cout_deuterium;
+                    augmenter_niveau_date_fin(6, niveau + 1, temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -130,8 +181,26 @@ function ajout_event_listenner_infrastructure() {
     centrale_fusion_boutton.addEventListener("click", function () {
         if (centrale_fusion_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const centrale_fusion_metal = document.getElementById("centrale_fusion_metal");
+                const centrale_fusion_deuterium = document.getElementById("centrale_fusion_deuterium");
+                const centrale_fusion_niveau = document.getElementById("centrale_fusion_niveau");
+                const centrale_fusion_temps = document.getElementById("centrale_fusion_temps");
+
+                cout_metal = parseInt(centrale_fusion_metal.innerHTML.substring(8));
+                cout_deuterium = parseInt(centrale_fusion_deuterium.innerHTML.substring(12));
+                niveau = parseInt(centrale_fusion_niveau.innerHTML.substring(16));
+                temps = parseInt(centrale_fusion_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_deuterium < quantite_deuterium) {
+                    quantite_metal -= cout_metal;
+                    quantite_deuterium -= cout_deuterium;
+                    augmenter_niveau_date_fin(7, niveau + 1, temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -141,8 +210,26 @@ function ajout_event_listenner_infrastructure() {
     artillerie_laser_boutton.addEventListener("click", function () {
         if (artillerie_laser_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const artillerie_laser_metal = document.getElementById("artillerie_laser_metal");
+                const artillerie_laser_deuterium = document.getElementById("artillerie_laser_deuterium");
+                const artillerie_laser_niveau = document.getElementById("artillerie_laser_niveau");
+                const artillerie_laser_temps = document.getElementById("artillerie_laser_temps");
+
+                cout_metal = parseInt(artillerie_laser_metal.innerHTML.substring(8));
+                cout_deuterium = parseInt(artillerie_laser_deuterium.innerHTML.substring(12));
+                niveau = parseInt(artillerie_laser_niveau.innerHTML.substring(16));
+                temps = parseInt(artillerie_laser_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_deuterium < quantite_deuterium) {
+                    quantite_metal -= cout_metal;
+                    quantite_deuterium -= cout_deuterium;
+                    augmenter_niveau_date_fin(8, niveau + 1 , temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -152,8 +239,26 @@ function ajout_event_listenner_infrastructure() {
     canon_ions_boutton.addEventListener("click", function () {
         if (canon_ions_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const canon_ions_metal = document.getElementById("canon_ions_metal");
+                const canon_ions_deuterium = document.getElementById("canon_ions_deuterium");
+                const canon_ions_niveau = document.getElementById("canon_ions_niveau");
+                const canon_ions_temps = document.getElementById("canon_ions_temps");
+
+                cout_metal = parseInt(canon_ions_metal.innerHTML.substring(8));
+                cout_deuterium = parseInt(canon_ions_deuterium.innerHTML.substring(12));
+                niveau = parseInt(canon_ions_niveau.innerHTML.substring(16));
+                temps = parseInt(canon_ions_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_deuterium < quantite_deuterium) {
+                    quantite_metal -= cout_metal;
+                    quantite_deuterium -= cout_deuterium;
+                    augmenter_niveau_date_fin(9, niveau + 1 , temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -163,8 +268,29 @@ function ajout_event_listenner_infrastructure() {
     bouclier_boutton.addEventListener("click", function () {
         if (canon_ions_boutton.className != "en_construction") {
             if (batiment) {
-                console.log("test");
-                ajouter_classe_en_construction();
+                const bouclier_metal = document.getElementById("bouclier_metal");
+                const bouclier_energie = document.getElementById("bouclier_energie");
+                const bouclier_deuterium = document.getElementById("bouclier_deuterium");
+                const bouclier_niveau = document.getElementById("bouclier_niveau");
+                const bouclier_temps = document.getElementById("bouclier_temps");
+
+                cout_metal = parseInt(bouclier_metal.innerHTML.substring(8));
+                cout_energie = parseInt(bouclier_metal.innerHTML.substring(10));
+                cout_deuterium = parseInt(bouclier_deuterium.innerHTML.substring(12));
+                niveau = parseInt(bouclier_niveau.innerHTML.substring(16));
+                temps = parseInt(bouclier_temps.innerHTML);
+
+                if (cout_metal < quantite_metal && cout_deuterium < quantite_deuterium && cout_energie < quantite_energie_total) {
+                    quantite_metal -= cout_metal;
+                    quantite_deuterium -= cout_deuterium;
+                    quantite_energie -= cout_energie;
+                    augmenter_niveau_date_fin(10, niveau + 1 , temps);
+
+                    //change la classe
+                    ajouter_classe_en_construction("en_construction");
+                    envoyer_ressource();
+                    construction_batiment();
+                }
             }
         }
     });
@@ -242,14 +368,14 @@ function augmenter_niveau_date_fin(batiment,niveau,temps){
     let jour = date.getDate();
     
     if(secondes > 60){
-        minutes += 1;
-        secondes -= 60;
+        minutes += Math.floor(secondes / 60);
+        secondes -= Math.floor(secondes / 60)*60;
         if(minutes > 60){
-            heures += 1;
-            minutes -= 60;
+            heures += Math.floor(minutes / 60);
+            minutes -= Math.floor(minutes / 60)*60;
             if(heures > 24){
-                jour += 1;
-                heures -= 24;
+                jour += Math.floor(heures / 24)*24;
+                heures -= Math.floor(heures / 24);
             }
         }
     }
