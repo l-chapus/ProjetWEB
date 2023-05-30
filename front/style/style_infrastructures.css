@@ -41,10 +41,7 @@ section div button {
     border-radius: 10px;
     border: 1px solid #000;
 }
-section div button:hover {
-    cursor: pointer;
-    background-color: #5183b3;
-}
+
 .image_categorie {
     width: 170px;
     height: 150px;
@@ -72,5 +69,10 @@ section div button:hover {
 .libre {
     color: #dff5f7;
     background-color: #3b556d;
+    border: 1px solid #000;
+}
+.libre:hover {
+    cursor: pointer;
+    background-color: #5183b3;
     border: 1px solid #000;
 }

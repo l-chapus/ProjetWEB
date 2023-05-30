@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div>
                     <p>Mine de métal</p>";
     $niveau = $infra['niveau'];
-    $textHTML .= "<p>Niveau actuel : $niveau</p>";
+    $textHTML .= "<p id='mine_metal_niveau'>Niveau actuel : $niveau</p>";
 
     $id = $infra['idMinier'];
     $sql = "SELECT * FROM minier WHERE id=$id";
@@ -84,8 +84,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $energie = round($minier['energie'] * pow(1.6, $niveau));
     $production = round($minier['production'] * pow(1.5, $niveau));
-    $textHTML .= "<p>Métal : $metal</p>";
-    $textHTML .= "<p>Energie : $energie</p>";
+    $textHTML .= "<p id='mine_metal_metal'>Métal : $metal</p>";
+    $textHTML .= "<p id='mine_metal_energie'>Energie : $energie</p>";
     $textHTML .= "<p>Production : $production / minutes</p></div>";
 
     $textHTML .= bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete);
@@ -218,19 +218,20 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 function installation_info($id, $niveau)
 {
     include 'pdo.php';
-    $info = "<p>Niveau actuel : $niveau</p>";
-
+    
     // Récupère les informations sur l'installation
     $sql = "SELECT * FROM installations WHERE id=$id";
     $result = $db->query($sql);
     $infra = $result->fetch(PDO::FETCH_ASSOC);
     $metal_id = $infra['nom'] . "_metal";
     $energie_id = $infra['nom'] . "_energie";
+    $niveau_id = $infra['nom'] . "_niveau";
 
     // calcul et arrondi au plus proche les valeurs
     $metal = round($infra['metal'] * pow(1.6, $niveau));
     $energie = round($infra['energie'] * pow(1.6, $niveau));
 
+    $info = "<p id='$niveau_id'>Niveau actuel : $niveau</p>";
     $info .= "<p id='$metal_id'>Métal : $metal</p>";
     $info .= "<p id='$energie_id'>Energie : $energie</p></div>";
 
@@ -268,11 +269,12 @@ function bouton_info($infra, $niveau_intelligeance_artificelle, $idPlanete)
     $result = $db->query($sql);
     $installation = $result->fetch(PDO::FETCH_ASSOC);
     $nom = $installation['nom'] . '_boutton';
+    $nom_temps = $installation['nom'] . '_temps';
     // calcul le temps de construction en prennant en compte le niveau de la technologie intelligeance artificiel
     $temps = round($installation['tempsConstruction'] * pow(2, $niveau) * pow(1 - $niveau_intelligeance_artificelle / 100, $niveau_usine_nanite));
 
-    $info .= "<button id='$nom'><div>Construire</div>";
-    $info .= "<div>$temps s</div></button></div>";
+    $info .= "<button id='$nom' class='libre'><div>Construire</div>";
+    $info .= "<div id='$nom_temps'>$temps s</div></button></div>";
 
     return $info;
 }

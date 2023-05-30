@@ -35,6 +35,7 @@ function ressource_update() {
                 quantite_deuterium += prod_deuterium / 60;
                 document.getElementById("metal_count").innerHTML = Math.round(quantite_metal);
                 document.getElementById("deuterium_count").innerHTML = Math.round(quantite_deuterium);
+                document.getElementById("energie_count").innerHTML = Math.round(quantite_energie_total);
             }, 1000);
         }
     };
