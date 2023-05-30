@@ -71,6 +71,20 @@ if (!$_SESSION) {
                     </button>
                 </div>
                 <div class="h_line_table"></div>
+                <div id="energie" class="categorie">
+                    <img class="image_categorie" src="ressources/recherche/intelligence_artificielle.png" alt="Logo de la recherche énergie">
+                    <div>
+                        <p>Intelligence artificielle</p>
+                        <p>Niveau actuel : 0</p>
+                        <p>Deutérium : 200</p>
+                        <p class="afficher">Nécessite le laboratoire de recherche</p>
+                    </div>
+                    <button>
+                        <div>Rechercher</div>
+                        <div>10s</div>
+                    </button>
+                </div>
+                <div class="h_line_table"></div>
                 <div id="laser" class="categorie">
                     <img class="image_categorie" src="ressources/recherche/laser.png" alt="Logo de la recherche laser">
                     <div>

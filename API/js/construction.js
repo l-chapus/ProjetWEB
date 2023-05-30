@@ -275,7 +275,7 @@ function ajout_event_listenner_infrastructure() {
                 const bouclier_temps = document.getElementById("bouclier_temps");
 
                 cout_metal = parseInt(bouclier_metal.innerHTML.substring(8));
-                cout_energie = parseInt(bouclier_metal.innerHTML.substring(10));
+                cout_energie = parseInt(bouclier_energie.innerHTML.substring(10));
                 cout_deuterium = parseInt(bouclier_deuterium.innerHTML.substring(12));
                 niveau = parseInt(bouclier_niveau.innerHTML.substring(16));
                 temps = parseInt(bouclier_temps.innerHTML);
