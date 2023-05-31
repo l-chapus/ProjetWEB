@@ -36,8 +36,8 @@ section {
     border-radius: 15px;
 }
 .image_vaisseaux {
-    height: 100px;
-    width: 150px;
+    height: 50%;
+    width: 75%;
 }
 section input {
     align-items: center;
@@ -59,6 +59,8 @@ section input {
 #univers {
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 100%;
 }
 .select {
     display: flex;
@@ -72,8 +74,8 @@ section input {
     border-radius: 5px;
 }
 #action {
-    position: relative;
-    left: 350px;   
+    position: absolute;
+    right: 10px;
 }
 .boutton_action {
     border: 1px solid #fff;

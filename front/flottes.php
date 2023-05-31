@@ -118,7 +118,7 @@ if (!$_SESSION) {
                             <label for="planete">Planète</label>
                             <select name="planete" id="planete_select">
                                 <option value="" disabled selected hidden>--Choisissez une option--</option>
-                                <option value="systeme_solaire_1">Système solaire 1</option>
+                                <option value="planete_1">Planète 1</option>
                                 <option value="systeme_solaire_2">Système solaire 2</option>
                                 <option value="systeme_solaire_3">Système solaire 3</option>
                                 <option value="systeme_solaire_4">Système solaire 4</option>
@@ -130,11 +130,12 @@ if (!$_SESSION) {
                                 <option value="systeme_solaire_10">Système solaire 10</option>
                             </select>
                         </div>
+                        <div id="action">
+                            <button class="boutton_action">Attaquer</button>
+                            <button class="boutton_action">Coloniser</button>
+                        </div>
                     </div>
-                    <div id="action">
-                        <button class="boutton_action">Attaquer</button>
-                        <button class="boutton_action">Coloniser</button>
-                    </div>
+                    
                 </div>
             </div>
             <div id="v_line_principale"></div>
