@@ -107,7 +107,14 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $infra = $db->prepare("INSERT INTO infrastructure (idPlanete,idDefense) VALUES (?,?);");
     $infra->execute([$idPlaneteAAttribuer, 3]);
 
-
+    // Initialise les recherches d'un joueur avec un niveau de 0 pour chaque recherche
+    $recherche = $db->prepare("INSERT INTO recherche (idUtilisateur,idPlanete,idTechnologie) VALUES (?,?,?);");
+    $recherche->execute([$idPlaneteAAttribuer, $idUser, 1]);
+    $recherche->execute([$idPlaneteAAttribuer, $idUser, 2]);
+    $recherche->execute([$idPlaneteAAttribuer, $idUser, 3]);
+    $recherche->execute([$idPlaneteAAttribuer, $idUser, 4]);
+    $recherche->execute([$idPlaneteAAttribuer, $idUser, 5]);
+    $recherche->execute([$idPlaneteAAttribuer, $idUser, 6]);
 
     $info = "<img src='ressources/nav/planete.png' alt='Logo de la planète'>" . $ref_planete;
     echo $info;
