@@ -38,6 +38,7 @@ window.addEventListener('load', () => {
     // Récupérer le bouton de déconnexion
     const deconnexion_bouton = document.getElementById("deconnexion_bouton");
     deconnexion_bouton.addEventListener("click", function () {
+        envoyer_ressource();
         console.log("déco");
     });
 });

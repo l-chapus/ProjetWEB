@@ -75,9 +75,12 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     
     $_SESSION['ref_planete'] = $ref_planete;
     
+    // Formater la date actuelle au format DATETIME
+    $formattedDate = date('Y-m-d H:i:s');
+
     // Initialise les ressources de base
-    $stmt = $db->prepare("INSERT INTO ressources (metal, deuterium, energie, idUtilisateurs, idUnivers) VALUES (?,?,?,?,?);");
-    $stmt->execute([1000,1000,1000,$idUser,$idUnivers]);
+    $stmt = $db->prepare("INSERT INTO ressources (metal, deuterium, energie, idUtilisateurs, idUnivers, dateDeconnexion) VALUES (?,?,?,?,?,?);");
+    $stmt->execute([1000,1000,1000,$idUser,$idUnivers,$formattedDate]);
 
 
     // initialise les infrastuctures dans la base de données avec un niveau égale à 0 et sans date de fin

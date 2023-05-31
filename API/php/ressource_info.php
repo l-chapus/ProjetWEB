@@ -62,9 +62,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     $metal = $_POST['metal'];
-    $energie = $_POST['energie'];;
+    $energie = $_POST['energie'];
     $deuterium = $_POST['deuterium'];
 
-    $stmt = $db->prepare("UPDATE ressources SET metal = $metal, deuterium = $deuterium, energie = $energie WHERE idUtilisateurs = ? AND idUnivers = ?");
-    $stmt->execute([$idUser,$idUnivers]);
+   
+    // Formater la date actuelle au format DATETIME
+    $formattedDate = date('Y-m-d H:i:s');
+
+    // Préparer la requête SQL avec les valeurs à mettre à jour
+    $stmt = $db->prepare("UPDATE ressources SET metal = ?, deuterium = ?, energie = ?, dateDeconnexion = ? WHERE idUtilisateurs = ? AND idUnivers = ?");
+
+    // Exécuter la requête avec les valeurs fournies
+    $stmt->execute([$metal, $deuterium, $energie, $formattedDate, $idUser, $idUnivers]);
+
 }
