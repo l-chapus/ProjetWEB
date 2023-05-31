@@ -114,6 +114,31 @@ INSERT IGNORE INTO `minier` (`id`, `idRecherche`, `niveauRecherche`, `nom`, `met
 	(4, 1, 10, 'centrale_fusion', 5000, 0, 2000, 120, 50);
 /*!40000 ALTER TABLE `minier` ENABLE KEYS */;
 
+-- Listage de la structure de la table esirem_galactique. position
+CREATE TABLE IF NOT EXISTS `position` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `taille` int(11) DEFAULT NULL,
+  `bonusSolaire` int(11) DEFAULT NULL,
+  `bonusMetal` int(11) DEFAULT NULL,
+  `bonusDeuterium` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Listage des données de la table esirem_galactique.position : ~10 rows (environ)
+/*!40000 ALTER TABLE `position` DISABLE KEYS */;
+INSERT INTO `position` (`taille`, `bonusSolaire`, `bonusMetal`, `bonusDeuterium`) VALUES
+	(90, 30, 0, -15),
+	(100, 20, 5, -10),
+	(110, 10, 10, -5),
+	(120, 5, 15, 0),
+	(130, 0, 20, 0),
+	(130, 0, 15, 10),
+	(120, -10, 10, 15),
+	(110, -20, 5, 20),
+	(100, -30, 0, 25),
+	(90, -40, -5, 30);
+/*!40000 ALTER TABLE `position` ENABLE KEYS */;
+
 -- Listage de la structure de la table esirem_galactique. planete
 CREATE TABLE IF NOT EXISTS `planete` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
