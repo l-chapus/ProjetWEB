@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    
+
     // Récupérer le bouton de la galaxie
     const galaxie_boutton = document.getElementById("galaxie_sidebar_bouton");
     galaxie_boutton.addEventListener("click", function () {
@@ -33,5 +33,11 @@ window.addEventListener('load', () => {
     flottes_sidebar_bouton.addEventListener("click", function () {
         envoyer_ressource();
         window.location.href = "../front/flottes.php";
+    });
+
+    // Récupérer le bouton de déconnexion
+    const deconnexion_bouton = document.getElementById("deconnexion_bouton");
+    deconnexion_bouton.addEventListener("click", function () {
+        console.log("déco");
     });
 });

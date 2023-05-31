@@ -76,8 +76,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $_SESSION['ref_planete'] = $ref_planete;
     
     // Initialise les ressources de base
-    $stmt = $db->prepare("UPDATE ressources SET metal = 1000, deuterium = 1000, energie = 1000 WHERE idUtilisateurs = ? AND idUnivers = ?");
-    $stmt->execute([$idUser,$idUnivers]);
+    $stmt = $db->prepare("INSERT INTO ressources (metal, deuterium, energie, idUtilisateurs, idUnivers) VALUES (?,?,?,?,?);");
+    $stmt->execute([1000,1000,1000,$idUser,$idUnivers]);
 
 
     // initialise les infrastuctures dans la base de données avec un niveau égale à 0 et sans date de fin

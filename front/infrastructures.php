@@ -55,6 +55,7 @@ if (!$_SESSION) {
             <button id="recherche_sidebar_bouton">Recherche</button>
             <button id="chatier_spatial_sidebar_bouton">Chantier spatial</button>
             <button id="flottes_sidebar_bouton">Flottes</button>
+            <button id="deconnexion_bouton">Déconnexion</button>
         </sidebar>
 
         <div id="principale">
