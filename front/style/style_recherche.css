@@ -27,7 +27,7 @@ section {
     border-radius: 20px;
     border: 1px solid #000;
 }
-section div button {
+.libre {
     height: 50px;
     width: 100px;
     position: absolute;
@@ -42,7 +42,7 @@ section div button {
     border-radius: 10px;
     border: 1px solid #000;
 }
-section div button:hover {
+.libre:hover {
     cursor: pointer;
     background-color: #5183b3;
 }
@@ -67,5 +67,20 @@ section div button:hover {
     width: 350px;
     padding: 5px 0px 5px 20px;
     border-radius: 10px;
+    background-color: #fe270191;
+}
+.en_construction, .en_construction:hover{
+    height: 50px;
+    width: 100px;
+    position: absolute;
+    right: 5px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    border-radius: 10px;
+    border: 1px solid #fe7b01;
     background-color: #fe270191;
 }

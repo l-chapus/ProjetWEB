@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $niveau = $recherche['niveau'];
     $textHTML .= "<p id='energie_niveau'>Niveau actuel : $niveau</p>";
     $textHTML .= "<p id='energie_deuterium'>Deutérium : 100</p>
-                  <p class='afficher'>Nécessite le laboratoire de recherche</p></div>
-                    <button><div>Rechercher</div><div id='energie_bouton'>";
+                  <p class='afficher' id='energie_labo'>Nécessite le laboratoire de recherche</p></div>
+                    <button id='energie_bouton' class='libre'><div>Rechercher</div><div id='energie_temps'>";
     $textHTML .= round(4 * pow(2, $niveau) * pow(0.95, $niveau_labo));
     $textHTML .= "s</div></button></div>";
 
@@ -60,8 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $niveau = $recherche['niveau'];
     $textHTML .= "<p id='intelligence_artificielle_niveau'>Niveau actuel : $niveau</p>";
     $textHTML .= "<p id='intelligence_artificielle_deuterium'>Deutérium : 200</p>
-                  <p class='afficher'>Nécessite le laboratoire de recherche</p></div>
-                    <button><div>Rechercher</div><div id='intelligence_artificielle_bouton'>";
+                  <p class='afficher' id='intelligence_artificielle_labo'>Nécessite le laboratoire de recherche</p></div>
+                    <button id='intelligence_artificielle_bouton' class='libre'><div>Rechercher</div><div id='intelligence_artificielle_temps'>";
     $textHTML .= round(10 * pow(2, $niveau) * pow(0.95, $niveau_labo));
     $textHTML .= "s</div></button></div>";
 
@@ -74,9 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $niveau = $recherche['niveau'];
     $textHTML .= "<p id='laser_niveau'>Niveau actuel : $niveau</p>";
     $textHTML .= "<p id='laser_deuterium'>Deutérium : 300</p>
-                  <p class='afficher'>Nécessite le laboratoire de recherche</p>
-                  <p class='afficher'>Nécessite la recherche Energie niveau 5</p></div>
-                  <button><div>Rechercher</div><div id='laser_bouton'>";
+                  <p class='afficher' id='laser_labo'>Nécessite le laboratoire de recherche</p>
+                  <p class='afficher' id='laser_techno_energie_5'>Nécessite la recherche Energie niveau 5</p></div>
+                  <button id='laser_bouton' class='libre'><div>Rechercher</div><div id='laser_temps'>";
     $textHTML .= round(2 * pow(2, $niveau) * pow(0.95, $niveau_labo));
     $textHTML .= "s</div></button></div>";
 
@@ -89,9 +89,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $niveau = $recherche['niveau'];
     $textHTML .= "<p id='ions_niveau'>Niveau actuel : $niveau</p>";
     $textHTML .= "<p id='inos_deuterium'>Deutérium : 300</p>
-                  <p class='afficher'>Nécessite le laboratoire de recherche</p>
-                  <p class='afficher'>Nécessite la recherche Laser niveau 5</p></div>
-                  <button><div>Rechercher</div><div id='ions_bouton'>";
+                  <p class='afficher' id='ions_labo'>Nécessite le laboratoire de recherche</p>
+                  <p class='afficher' id='ions_techno_laser_5'>Nécessite la recherche Laser niveau 5</p></div>
+                  <button id='ions_bouton' class='libre'><div>Rechercher</div><div id='ions_temps'>";
     $textHTML .= round(8 * pow(2, $niveau) * pow(0.95, $niveau_labo));
     $textHTML .= "s</div></button></div>";
 
@@ -104,10 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $niveau = $recherche['niveau'];
     $textHTML .= "<p id='bouclier_niveau'>Niveau actuel : $niveau</p>";
     $textHTML .= "<p id='bouclier_deuterium'>Deutérium : 1000</p>
-                  <p class='afficher'>Nécessite le laboratoire de recherche</p>
-                  <p class='afficher'>Nécessite la recherche Ions niveau 2</p>
-                  <p class='afficher'>Nécessite la recherche Energie niveau 8</p></div>
-                  <button><div>Rechercher</div><div id='bouclier_bouton'>";
+                  <p class='afficher' id='bouclier_labo'>Nécessite le laboratoire de recherche</p>
+                  <p class='afficher' id='bouclier_techno_ions_2'>Nécessite la recherche Ions niveau 2</p>
+                  <p class='afficher' id='bouclier_techno_enregie_8'>Nécessite la recherche Energie niveau 8</p></div>
+                  <button id='bouclier_bouton' class='libre'><div>Rechercher</div><div id='bouclier_temps'>";
     $textHTML .= round(5 * pow(2, $niveau) * pow(0.95, $niveau_labo));
     $textHTML .= "s</div></button></div>";
 
@@ -122,8 +122,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $textHTML .= "<p id='armement_niveau'>Niveau actuel : $niveau</p>";
     $textHTML .= "<p id='armement_deuterium'>Deutérium : 1000</p>
                   <p id='armement_metal'>Métal : 500</p>
-                  <p class='afficher'>Nécessite le laboratoire de recherche</p>
-                  <button><div>Rechercher</div><div id='armement_bouton'>";
+                  <p class='afficher' id='armement_labo'>Nécessite le laboratoire de recherche</p>
+                  <button id='armement_bouton' class='libre'><div>Rechercher</div><div id='armement_temps'>";
     $textHTML .= round(6 * pow(2, $niveau) * pow(0.95, $niveau_labo));
     $textHTML .= "s</div></button></div>";
 

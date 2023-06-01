@@ -23,6 +23,7 @@ function afficher_infra() {
 }
 
 function construction_batiment() {
+
     // Récupération de la date de fin
     const xhr = new XMLHttpRequest();
     xhr.open('GET', '../API/php/batiment_en_construction.php', true);
@@ -67,7 +68,7 @@ function construction_batiment() {
 }
 
 function reset_date_batiment() {
-    // Affichage des sections avec les bonnes informations
+    // reset de la date de fin de construction du batiment
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../API/php/batiment_en_construction.php', true);
     xhr.send();

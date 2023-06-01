@@ -21,6 +21,7 @@ if (!$_SESSION) {
     <script src="../API/js/planete_nav.js"></script>
 
     <script src="../API/js/affichage_recherche.js"></script>
+    <script src="../API/js/recherche_manager.js"></script>
 
     <nav>
         <div id="ref_planete"></div>

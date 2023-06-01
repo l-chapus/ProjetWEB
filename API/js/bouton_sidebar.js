@@ -39,6 +39,6 @@ window.addEventListener('load', () => {
     const deconnexion_bouton = document.getElementById("deconnexion_bouton");
     deconnexion_bouton.addEventListener("click", function () {
         envoyer_ressource();
-        console.log("déco");
+        window.location.href = "../front/index.html";
     });
 });
