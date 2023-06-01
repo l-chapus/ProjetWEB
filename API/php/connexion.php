@@ -78,6 +78,10 @@ if (isset($_POST['email']) && isset($_POST['password']))
               include 'creation_univers.php';
             }
           
+            // calcul les ressources générer pendant que le joueur est déconnecté
+            include 'ressource_connexion.php';
+                        
+
             // Rediriger l'utilisateur vers la page d'accueil
             header("Location:../../front/galaxie.php");
           }
