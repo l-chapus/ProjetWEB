@@ -20,6 +20,8 @@ if (!$_SESSION) {
     <script src="../API/js/ressource_manager.js"></script>    
     <script src="../API/js/planete_nav.js"></script>
 
+    <script src="../API/js/affichage_recherche.js"></script>
+
     <nav>
         <div id="ref_planete"></div>
         <img id="logo" src="ressources/nav/logo.png" alt="Logo ESIREM Galactique">
@@ -55,99 +57,6 @@ if (!$_SESSION) {
         </sidebar>
 
         <div id="principale">
-            <section id="recheche">
-                <h3>Recherche</h3>
-                <div class="h_line_table"></div>
-                <div id="energie" class="categorie">
-                    <img class="image_categorie" src="ressources/recherche/energie.png" alt="Logo de la recherche énergie">
-                    <div>
-                        <p>Energie</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Deutérium : 100</p>
-                        <p class="afficher">Nécessite le laboratoire de recherche</p>
-                    </div>
-                    <button>
-                        <div>Rechercher</div>
-                        <div>4s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="energie" class="categorie">
-                    <img class="image_categorie" src="ressources/recherche/intelligence_artificielle.png" alt="Logo de la recherche énergie">
-                    <div>
-                        <p>Intelligence artificielle</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Deutérium : 200</p>
-                        <p class="afficher">Nécessite le laboratoire de recherche</p>
-                    </div>
-                    <button>
-                        <div>Rechercher</div>
-                        <div>10s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="laser" class="categorie">
-                    <img class="image_categorie" src="ressources/recherche/laser.png" alt="Logo de la recherche laser">
-                    <div>
-                        <p>Laser</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Deutérium : 300</p>
-                        <p class="afficher">Nécessite le laboratoire de recherche</p>
-                        <p class="afficher">Nécessite la recherche Energie niveau 5</p>
-                    </div>
-                    <button>
-                        <div>Rechercher</div>
-                        <div>2s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="ions" class="categorie">
-                    <img class="image_categorie" src="ressources/recherche/ions.png" alt="Logo de la recherche ions">
-                    <div>
-                        <p>Ions</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Deutérium : 300</p>
-                        <p class="afficher">Nécessite le laboratoire de recherche</p>
-                        <p class="afficher">Nécessite la recherche Laser niveau 5</p>
-                    </div>
-                    <button>
-                        <div>Rechercher</div>
-                        <div>8s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="bouclier" class="categorie">
-                    <img class="image_categorie" src="ressources/recherche/bouclier.png" alt="Logo de la recherche bouclier">
-                    <div>
-                        <p>Bouclier</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Deutérium : 1 000</p>
-                        <p class="afficher">Nécessite le laboratoire de recherche</p>
-                        <p class="afficher">Nécessite la recherche Energie niveau 8</p>
-                        <p class="afficher">Nécessite la recherche Ions niveau 2</p>
-                    </div>
-                    <button>
-                        <div>Rechercher</div>
-                        <div>5s</div>
-                    </button>
-                </div>
-                <div class="h_line_table"></div>
-                <div id="armement" class="categorie">
-                    <img class="image_categorie" src="ressources/recherche/armement.png" alt="Logo de la recherche armement">
-                    <div>
-                        <p>Armement</p>
-                        <p>Niveau actuel : 0</p>
-                        <p>Deutérium : 200</p>
-                        <p>Métal : 500</p>
-                        <p class="afficher">Nécessite le laboratoire de recherche</p>
-                    </div>
-                    <button>
-                        <div>Rechercher</div>
-                        <div>6s</div>
-                    </button>
-                </div>
-            </section>
-
         </div>
     </div>
 </body>

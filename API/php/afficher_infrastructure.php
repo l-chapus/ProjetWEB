@@ -36,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $niveau_laser = 0;
     $niveau_ions = 0;
     $niveau_bouclier = 0;
+    $niveau_energie = 0;
 
 
     $textHTML = "";
@@ -136,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $deuterium = round($minier['deuterium'] * pow(1.6, $niveau));
-    $production = round($minier['production'] * pow(1.4, $niveau));
+    $production = round($minier['production'] * pow(1.4, $niveau) * pow(1.02, $niveau_energie));
 
     $textHTML .= "<p id='centrale_solaire_metal' >Métal : $metal</p>";
     $textHTML .= "<p id='centrale_solaire_deuterium' >Deutérium : $deuterium</p>";
@@ -161,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $deuterium = round($minier['deuterium'] * pow(1.6, $niveau));
-    $production = round($minier['production'] * pow(2, $niveau));
+    $production = round($minier['production'] * pow(2, $niveau) * pow(1.02, $niveau_energie));
 
     $textHTML .= "<p id='centrale_fusion_metal' >Métal : $metal</p>";
     $textHTML .= "<p id='centrale_fusion_deuterium' >Deutérium : $deuterium</p>";

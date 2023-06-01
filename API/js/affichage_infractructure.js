@@ -16,9 +16,9 @@ function afficher_infra() {
 
     //attend que la page est fini de se générer
     setTimeout(function () {
-        ajout_event_listenner_infrastructure();
         construction_batiment();
-    }, 500);
+        ajout_event_listenner_infrastructure();
+    }, 300);
 
 }
 
@@ -31,7 +31,9 @@ function construction_batiment() {
                 
         if (dateFin) {
             let intervalID = null;
-    
+
+            ajouter_classe_en_construction("en_construction");
+            
             // intervalle de 1000 millisecondes (1 seconde)
             intervalID = setInterval(function () {
                 const date = new Date();
