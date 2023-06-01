@@ -17,13 +17,13 @@ function ajout_event_listenner_infrastructure() {
 
                         cout_metal = parseInt(laboratoire_recheche_metal.innerHTML.substring(8));
                         cout_energie = parseInt(laboratoire_recheche_energie.innerHTML.substring(10));
-                        niveau = parseInt(laboratoire_recheche_niveau.innerHTML.substring(16)) + 1;
+                        niveau = parseInt(laboratoire_recheche_niveau.innerHTML.substring(16));
                         temps = parseInt(laboratoire_recheche_temps.innerHTML);
 
                         if (cout_metal < quantite_metal && cout_energie < quantite_energie_total) {
                             quantite_metal -= cout_metal;
                             quantite_energie -= cout_energie;
-                            augmenter_niveau_date_fin(1, niveau, temps);
+                            augmenter_niveau_date_fin(1, niveau + 1, temps);
 
                             //change la classe
                             ajouter_classe_en_construction("en_construction");

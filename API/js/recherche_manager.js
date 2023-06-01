@@ -29,19 +29,19 @@ function ajout_event_listenner_recherche() {
                 const bouclier_techno_ions_2 = document.getElementById("bouclier_techno_ions_2");
                 const bouclier_techno_enregie_8 = document.getElementById("bouclier_techno_enregie_8");
 
-                if(energie_niveau >= 5){
+                if (energie_niveau >= 5) {
                     laser_techno_energie_5.classList.replace('afficher', 'reset');
                 }
-                if(energie_niveau >= 8){
+                if (energie_niveau >= 8) {
                     bouclier_techno_enregie_8.classList.replace('afficher', 'reset');
                 }
-                if(laser_niveau >= 5){
+                if (laser_niveau >= 5) {
                     ions_techno_laser_5.classList.replace('afficher', 'reset');
                 }
-                if(ions_niveau >= 2){
+                if (ions_niveau >= 2) {
                     bouclier_techno_ions_2.classList.replace('afficher', 'reset');
                 }
-                
+
 
                 // Récupérer le bouton de la technologie energie
                 const energie_bouton = document.getElementById("energie_bouton");
@@ -176,7 +176,7 @@ function ajout_event_listenner_recherche() {
                         const armement_deuterium = document.getElementById("armement_deuterium");
                         const armement_metal = document.getElementById("armement_metal");
                         const armement_temps = document.getElementById("armement_temps");
-                        
+
                         cout_deuterium = parseInt(armement_deuterium.innerHTML.substring(12));
                         cout_metal = parseInt(armement_metal.innerHTML.substring(8))
                         niveau = parseInt(document.getElementById("armement_niveau").innerHTML.substring(16));
@@ -185,7 +185,7 @@ function ajout_event_listenner_recherche() {
                         if (cout_deuterium < quantite_deuterium && cout_metal < quantite_metal) {
                             quantite_deuterium -= cout_deuterium;
                             quantite_metal -= cout_metal;
-                            augmenter_niveau_date_fin_recherche(6, niveau + 1, temps);
+                            augmenter_niveau_date_fin_recherche(1, niveau + 1, temps);
 
                             //change la classe
                             ajouter_classe_en_construction_recherche("en_construction");

@@ -30,14 +30,23 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $result = $db->query($sql);
     $infra = $result->fetch(PDO::FETCH_ASSOC);
 
-    // NIVEAU DES RECHERCHES
-    // A DEFINIR DYNAMIQUEMENT
-    $niveau_intelligeance_artificelle = 5;
-    $niveau_laser = 0;
-    $niveau_ions = 0;
-    $niveau_bouclier = 0;
-    $niveau_energie = 0;
+    // NIVEAUX DES RECHERCHES
+    $sql = "SELECT * FROM recherche WHERE idPlanete=$idPlanete AND idUtilisateur=$idUser";
+    $result_recherche = $db->query($sql);
+    $recherche = $result_recherche->fetch(PDO::FETCH_ASSOC);
+    $niveau_energie = $recherche['niveau'];
+    
+    $recherche = $result_recherche->fetch(PDO::FETCH_ASSOC);
+    $niveau_intelligeance_artificelle = $recherche['niveau'];
 
+    $recherche = $result_recherche->fetch(PDO::FETCH_ASSOC);
+    $niveau_laser = $recherche['niveau'];
+
+    $recherche = $result_recherche->fetch(PDO::FETCH_ASSOC);
+    $niveau_ions = $recherche['niveau'];
+    
+    $recherche = $result_recherche->fetch(PDO::FETCH_ASSOC);
+    $niveau_bouclier = $recherche['niveau'];
 
     $textHTML = "";
     $ligne = "<div class='h_line_table'></div>";
@@ -191,8 +200,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($defense['metal'] * pow(1.6, $niveau));
     $deuterium = round($defense['deuterium'] * pow(1.6, $niveau));
-    $pt_attaque = round($defense['pointAttaque'] * pow(1.05, $niveau_laser + $niveau_ions));
-    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier));
+    $pt_attaque = round($defense['pointAttaque'] * pow(1.05, $niveau_laser + $niveau_ions) * pow(1.5, $niveau));
+    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier) * pow(1.5, $niveau));
 
     $textHTML .= "<p id='artillerie_laser_metal'>Métal : $metal</p>";
     $textHTML .= "<p id='artillerie_laser_deuterium'>Deutérium : $deuterium</p>";
@@ -218,8 +227,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($defense['metal'] * pow(1.6, $niveau));
     $deuterium = round($defense['deuterium'] * pow(1.6, $niveau));
-    $pt_attaque = round($defense['pointAttaque'] * pow(1.05, $niveau_laser + $niveau_ions));
-    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier));
+    $pt_attaque = round($defense['pointAttaque'] * pow(1.05, $niveau_laser + $niveau_ions) * pow(1.5, $niveau));
+    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier) * pow(1.5, $niveau));
 
     $textHTML .= "<p id='canon_ions_metal'>Métal : $metal</p>";
     $textHTML .= "<p id='canon_ions_deuterium'>Deutérium : $deuterium</p>";
@@ -246,7 +255,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $metal = round($defense['metal'] * pow(1.5, $niveau));
     $energie = round($defense['energie'] * pow(1.5, $niveau));
     $deuterium = round($defense['deuterium'] * pow(1.5, $niveau));
-    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier));
+    $pt_defense = round($defense['pointDéfense'] * pow(1.3, $niveau_bouclier) * pow(1.5, $niveau));
     $textHTML .= "<p id='bouclier_metal'>Métal : $metal</p>";
     $textHTML .= "<p id='bouclier_energie'>Energie : $energie</p>";
     $textHTML .= "<p id='bouclier_deuterium'>Deutérium : $deuterium</p>";
