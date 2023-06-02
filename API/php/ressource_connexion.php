@@ -26,6 +26,7 @@ $planete = $result->fetch(PDO::FETCH_ASSOC);
 if ($planete) {
 
     $idPlanete = $planete['id'];
+    $idPosition = $planete['idPosition'];
 
     // Récupère les ressources du joueur
     $sql = "SELECT * FROM ressources WHERE idUtilisateurs=$idUser AND idUnivers=$idUnivers";
@@ -55,6 +56,12 @@ if ($planete) {
     // calcul le temps entre les deux dates en secondes
     $temps = $diff_secondes + 60 * ($diff_minutes + 60 * ($diff_heures + 24 * ($diff_jours + 30 * ($diff_mois + 12 * $diff_annees))));
 
+    // Récupération des bonus de génération
+    $sql = "SELECT * FROM position WHERE id=$idPosition";
+    $position = $db->query($sql);
+    $bonus = $position->fetch(PDO::FETCH_ASSOC);
+    $bonus_metal = 1 + $bonus['bonusMetal']/100;
+    $bonus_deuterium = 1 + $bonus['bonusDeuterium']/100;
 
     // Récupère les informations sur la mine de métal
     $sql = "SELECT * FROM infrastructure WHERE idPlanete=$idPlanete AND idMinier=1";
@@ -69,7 +76,7 @@ if ($planete) {
     $production = $minier['production'] * pow(1.5, $niveau);
 
     // Calcul la quatité de ressource
-    $metal = round($temps * ($production / 60)) + $ancien_metal;
+    $metal = round($temps * ($production / 60) * $bonus_metal) + $ancien_metal;
 
 
     // Récupère les informations sur le synthétiseur de deutérium
@@ -85,7 +92,7 @@ if ($planete) {
     $production = $synthe['production'] * pow(1.3, $niveau);
 
     // Calcul la quatité de ressource
-    $deuterium = round($temps * ($production / 60)) + $ancien_deuterium;
+    $deuterium = round($temps * ($production / 60) * $bonus_deuterium) + $ancien_deuterium;
 
 
     // Formater la date actuelle au format DATETIME

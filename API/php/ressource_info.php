@@ -23,7 +23,7 @@ $sql = "SELECT * FROM planete WHERE idUtilisateurs=$idUser AND idUnivers=$idUniv
 $result = $db->query($sql);
 $planete = $result->fetch(PDO::FETCH_ASSOC);
 $idPlanete = $planete['id'];
-
+$idPosition = $planete['idPosition'];
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
@@ -47,6 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $infra = $result->fetch(PDO::FETCH_ASSOC);
     $niveau_centrale_fusion = $infra['niveau'];
 
+    // Bonus sur la prod
+    $sql = "SELECT * FROM position WHERE id=$idPosition";
+    $position = $db->query($sql);
+    $bonus = $position->fetch(PDO::FETCH_ASSOC);
+    $bonus_solaire = 1 + $bonus['bonusSolaire']/100;
+    $bonus_metal = 1 + $bonus['bonusMetal']/100;
+    $bonus_deuterium = 1 + $bonus['bonusDeuterium']/100;
 
     $metal = $ressources['metal'];
     $energie = $ressources['energie'];
@@ -54,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 
     // on sépare chaque valeur pour pouvoir les retrouvées dans le javascript
-    $info = $metal . '|' . $niveau_mine  . '|' . $deuterium . '|' . $niveau_synthetiseur . '|' . $energie . '|' . $niveau_centrale_solaire . '|' . $niveau_centrale_fusion;
+    $info = $metal . '|' . $niveau_mine  . '|' . $deuterium . '|' . $niveau_synthetiseur . '|' . $energie . '|' . $niveau_centrale_solaire . '|' . $niveau_centrale_fusion . '|' . $bonus_solaire . '|' . $bonus_metal . '|' . $bonus_deuterium ;
 
     echo $info;
 }

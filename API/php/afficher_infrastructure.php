@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $result = $db->query($sql);
     $planete = $result->fetch(PDO::FETCH_ASSOC);
     $idPlanete = $planete['id'];
+    $idPosition = $planete['idPosition'];
 
     // Récupère les informations sur les infrastructures
     $sql = "SELECT * FROM infrastructure WHERE idPlanete=$idPlanete";
@@ -47,6 +48,15 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     $recherche = $result_recherche->fetch(PDO::FETCH_ASSOC);
     $niveau_bouclier = $recherche['niveau'];
+
+
+    // BONUS SUR LA POSITION DE LA PLANETE
+    $sql = "SELECT * FROM position WHERE id=$idPosition";
+    $position = $db->query($sql);
+    $bonus = $position->fetch(PDO::FETCH_ASSOC);
+    $bonus_solaire = 1 + $bonus['bonusSolaire'] / 100;
+    $bonus_metal = 1 + $bonus['bonusMetal'] / 100;
+    $bonus_deuterium = 1 + $bonus['bonusDeuterium'] / 100;
 
     $textHTML = "";
     $ligne = "<div class='h_line_table'></div>";
@@ -97,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $energie = round($minier['energie'] * pow(1.6, $niveau));
-    $production = round($minier['production'] * pow(1.5, $niveau));
+    $production = round($minier['production'] * pow(1.5, $niveau) * $bonus_metal) ;
     $textHTML .= "<p id='mine_metal_metal'>Métal : $metal</p>";
     $textHTML .= "<p id='mine_metal_energie'>Energie : $energie</p>";
     $textHTML .= "<p>Production : $production / minutes</p></div>";
@@ -121,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $energie = round($minier['energie'] * pow(1.6, $niveau));
-    $production = round($minier['production'] * pow(1.3, $niveau));
+    $production = round($minier['production'] * pow(1.3, $niveau) * $bonus_deuterium) ;
 
     $textHTML .= "<p id='synthe_deuterium_metal'>Métal : $metal</p>";
     $textHTML .= "<p id='synthe_deuterium_energie'>Energie : $energie</p>";
@@ -146,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $deuterium = round($minier['deuterium'] * pow(1.6, $niveau));
-    $production = round($minier['production'] * pow(1.4, $niveau) * pow(1.02, $niveau_energie));
+    $production = round($minier['production'] * pow(1.4, $niveau) * pow(1.02, $niveau_energie) * $bonus_solaire);
 
     $textHTML .= "<p id='centrale_solaire_metal' >Métal : $metal</p>";
     $textHTML .= "<p id='centrale_solaire_deuterium' >Deutérium : $deuterium</p>";
@@ -171,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $metal = round($minier['metal'] * pow(1.6, $niveau));
     $deuterium = round($minier['deuterium'] * pow(1.6, $niveau));
-    $production = round($minier['production'] * pow(2, $niveau) * pow(1.02, $niveau_energie));
+    $production = round($minier['production'] * pow(2, $niveau) * pow(1.02, $niveau_energie) * $bonus_solaire);
 
     $textHTML .= "<p id='centrale_fusion_metal' >Métal : $metal</p>";
     $textHTML .= "<p id='centrale_fusion_deuterium' >Deutérium : $deuterium</p>";

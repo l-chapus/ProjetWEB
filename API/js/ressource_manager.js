@@ -26,13 +26,17 @@ function ressource_update() {
             niveau_centrale_fusion = params[6];
             quantite_energie = parseFloat(quantite_energie_bdd);
 
-            quantite_energie_total = quantite_energie + 20 * 1.6 ** niveau_centrale_solaire + 50 * 2 ** niveau_centrale_fusion,
+            const bonus_solaire = params[7];
+            const bonus_metal = params[8];
+            const bonus_deuterium = params[9];
+
+            quantite_energie_total = (quantite_energie + 20 * 1.6 ** niveau_centrale_solaire + 50 * 2 ** niveau_centrale_fusion) * bonus_solaire;
             document.getElementById("energie_count").innerHTML = Math.round(quantite_energie_total);
             document.getElementById("metal_count").innerHTML = Math.round(quantite_metal);
             document.getElementById("deuterium_count").innerHTML = Math.round(quantite_deuterium);
 
-            prod_metal = 3 * 1.5 ** niveau_mine;
-            prod_deuterium = 1 * 1.3 ** niveau_synthetiseur;
+            prod_metal = (3 * 1.5 ** niveau_mine) * bonus_metal;
+            prod_deuterium = (1 * 1.3 ** niveau_synthetiseur) * bonus_deuterium;
 
             // intervalle de 1000 millisecondes (1 seconde)
             setInterval(function () {
