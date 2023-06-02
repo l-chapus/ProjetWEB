@@ -5,16 +5,14 @@ include 'pdo.php';
 session_start();
 
 // Récupère l'id de l'utilisateur
-$email = "diabolodu30@gmail.com";
-//$email = $_SESSION['email'];
+$email = $_SESSION['email'];
 $sql = "SELECT id FROM utilisateurs WHERE email='$email'";
 $result = $db->query($sql);
 $user = $result->fetch(PDO::FETCH_ASSOC);
 $idUser = $user['id'];
 
 // Récupère l'id de l'univers
-$univers_nom = "Univers 2";
-//$univers_nom = $_SESSION['univers'];
+$univers_nom = $_SESSION['univers'];
 $sql = "SELECT id FROM univers WHERE nom='$univers_nom'";
 $result = $db->query($sql);
 $univers = $result->fetch(PDO::FETCH_ASSOC);
