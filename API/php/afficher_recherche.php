@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                 <div><p>Ions</p>";
     $niveau = $recherche['niveau'];
     $textHTML .= "<p id='ions_niveau'>Niveau actuel : $niveau</p>";
-    $textHTML .= "<p id='inos_deuterium'>Deutérium : 300</p>
+    $textHTML .= "<p id='ions_deuterium'>Deutérium : 300</p>
                   <p class='afficher' id='ions_labo'>Nécessite le laboratoire de recherche</p>
                   <p class='afficher' id='ions_techno_laser_5'>Nécessite la recherche Laser niveau 5</p></div>
                   <button id='ions_bouton' class='libre'><div>Rechercher</div><div id='ions_temps'>";

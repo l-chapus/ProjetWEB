@@ -21,6 +21,7 @@ if (!$_SESSION) {
     <script src="../API/js/planete_nav.js"></script>
 
     <script src="../API/js/affichage_chantier_spatial.js"></script>
+    <script src="../API/js/chantier_spatial_manager.js"></script>
 
     <nav>
         <div id="ref_planete"></div>

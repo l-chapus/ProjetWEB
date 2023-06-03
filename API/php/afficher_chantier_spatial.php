@@ -72,8 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <p>Point d'attaque : $attaque</p>
                         <p>Point de défense: $defense</p>
                     </div>
-                    <div class='afficher'>Nécessite le chantier spatial</div>
-                    <button class='libre'>
+                    <div id='chasseur_chantier' class='afficher'>Nécessite le chantier spatial</div>
+                    <button id='chasseur_bouton' class='libre'>
                         <div>Construire</div>
                         <div id='chasseur_temps'>$temps s</div>
                     </button>
@@ -106,9 +106,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <p>Point d'attaque : $attaque</p>
                         <p>Point de défense: $defense</p>
                     </div>
-                    <div class='afficher'>Nécessite le chantier spatial</div>
+                    <div id='croiseur_chantier'  class='afficher'>Nécessite le chantier spatial</div>
                     <div class='afficher'>Nécessite la technologie ions niveau 4</div>
-                    <button class='libre'>
+                    <button id='croiseur_bouton' class='libre'>
                         <div>Construire</div>
                         <div id='croiseur_temps'>$temps s</div>
                     </button>
@@ -142,8 +142,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <p>Point de défense: $defense</p>
                         <p>Capacité de fret: 100 000</p>
                     </div>
-                    <div class='afficher'>Nécessite le chantier spatial</div>
-                    <button class='libre'>
+                    <div id='transporteur_chantier'  class='afficher'>Nécessite le chantier spatial</div>
+                    <button id='transporteur_bouton' class='libre'>
                         <div>Construire</div>
                         <div id='transporteur_temps'>$temps s</div>
                     </button>
@@ -176,8 +176,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                         <p>Point d'attaque : $attaque</p>
                         <p>Point de défense: $defense</p>
                     </div>
-                    <div class='afficher'>Nécessite le chantier spatial</div>
-                    <button class='libre'>
+                    <div id='colonisateur_chantier'  class='afficher'>Nécessite le chantier spatial</div>
+                    <button id='colonisateur_bouton' class='libre'>
                         <div>Construire</div>
                         <div id='colonisateur_temps'>$temps s</div>
                     </button>
