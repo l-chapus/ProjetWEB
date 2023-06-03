@@ -119,6 +119,14 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     $recherche->execute([$idPlaneteAAttribuer, $idUser, 5]);
     $recherche->execute([$idPlaneteAAttribuer, $idUser, 6]);
 
+    // Initialise les vaisseaux posséder par un joueur
+    $flotte = $db->prepare("INSERT INTO flotte (idPlanete,idUtilisateur,idChantierSpatial) VALUES (?,?,?);");
+    $flotte->execute([$idPlaneteAAttribuer, $idUser, 1]);
+    $flotte->execute([$idPlaneteAAttribuer, $idUser, 2]);
+    $flotte->execute([$idPlaneteAAttribuer, $idUser, 3]);
+    $flotte->execute([$idPlaneteAAttribuer, $idUser, 4]);
+    
+
     $info = "<img src='ressources/nav/planete.png' alt='Logo de la planète'>" . $ref_planete;
     echo $info;
 }
